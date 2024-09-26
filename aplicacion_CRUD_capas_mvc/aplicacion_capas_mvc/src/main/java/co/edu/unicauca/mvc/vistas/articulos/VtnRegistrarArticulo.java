@@ -177,7 +177,7 @@ public class VtnRegistrarArticulo extends javax.swing.JFrame {
         
         Articulo objArticulo= new Articulo();
         objArticulo.setTitulo(titulo);
-        objArticulo.setAutores(autores);
+        objArticulo.setDescripcion(autores);
         objArticulo.setObjConferencia(objConferencia);
         
         bandera=this.objServicio1.almacenarArticulo(objArticulo);

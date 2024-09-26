@@ -68,7 +68,7 @@ public class VtnListarArticulos extends javax.swing.JInternalFrame {
             Object [] fila= { 
                 listaArticulos.get(i).getIdArticulo(),
                 listaArticulos.get(i).getTitulo(),
-                listaArticulos.get(i).getAutores(),
+                listaArticulos.get(i).getDescripcion(),
                 listaArticulos.get(i).getObjConferencia().getNombre(),
                 JButtonEliminarArticulo,
                 JButtonActualizarArticulo};

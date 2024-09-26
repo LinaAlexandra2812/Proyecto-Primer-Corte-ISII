@@ -35,7 +35,7 @@ public class VtnActualizarArticulo extends javax.swing.JFrame {
         Articulo objArticulo=this.objServicio1.consultarArticulo(idArticulo);
         this.jTextFieldId.setText(objArticulo.getIdArticulo()+"");
         this.jTextFieldTitulo.setText(objArticulo.getTitulo());
-        this.jTextAreaAutores.setText(objArticulo.getAutores());
+        this.jTextAreaAutores.setText(objArticulo.getDescripcion());
         this.jComboBoxConferencia.setSelectedItem(objArticulo.getObjConferencia());
     }
     
@@ -207,7 +207,7 @@ public class VtnActualizarArticulo extends javax.swing.JFrame {
         Articulo objArticulo= new Articulo();
         objArticulo.setIdArticulo(idArticulo);
         objArticulo.setTitulo(titulo);
-        objArticulo.setAutores(autores);
+        objArticulo.setDescripcion(autores);
         objArticulo.setObjConferencia(objConferencia);
         
         bandera=this.objServicio1.actualizarArticulo(objArticulo);

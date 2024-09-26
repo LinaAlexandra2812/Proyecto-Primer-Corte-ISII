@@ -1,6 +1,7 @@
 package co.edu.unicauca.mvc.test;
 
 import co.edu.unicauca.mvc.accesoADatos.RepositorioArticuloMemoriaArrayList;
+import co.edu.unicauca.mvc.accesoADatos.RepositorioArticuloSqlite;
 import co.edu.unicauca.mvc.accesoADatos.RepositorioConferenciaMemoriaArrayList;
 import co.edu.unicauca.mvc.controladores.ServicioAlmacenamientoArticulos;
 import co.edu.unicauca.mvc.controladores.ServicioAlmacenamientoConferencias;
@@ -30,6 +31,12 @@ public class Test {
         
         ServicioAlmacenamientoArticulos objServicio2
                 = new ServicioAlmacenamientoArticulos(objRepositorio2);
+        
+        RepositorioArticuloSqlite objRepositorioSqlite1 = 
+                new RepositorioArticuloSqlite();
+        
+        ServicioAlmacenamientoArticulos objServicio = 
+                new ServicioAlmacenamientoArticulos(objRepositorioSqlite1);
         
         VtnPrincipalAsistente objVtnAsistente=new VtnPrincipalAsistente();
         VtnPrincipalAutor objVtnAutor= new VtnPrincipalAutor();

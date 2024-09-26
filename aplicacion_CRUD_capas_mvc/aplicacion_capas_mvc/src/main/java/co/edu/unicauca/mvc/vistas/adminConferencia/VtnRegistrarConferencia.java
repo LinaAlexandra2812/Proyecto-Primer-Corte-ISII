@@ -175,7 +175,7 @@ public class VtnRegistrarConferencia extends javax.swing.JFrame {
                 
                 costoInscripcion=Float.parseFloat(costo);
         
-                Conferencia objConferencia= new Conferencia(nombre, fechaInicioDate, fechaFinDate, costoInscripcion);
+                Conferencia objConferencia= new Conferencia();
 
 
                 bandera=this.objServicioAlmacenamiento.almacenarConferencia(objConferencia);
