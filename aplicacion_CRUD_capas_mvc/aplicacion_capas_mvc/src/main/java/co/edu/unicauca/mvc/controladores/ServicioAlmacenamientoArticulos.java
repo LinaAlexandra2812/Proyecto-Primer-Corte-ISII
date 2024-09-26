@@ -1,4 +1,3 @@
-//Esto es un comentario de prueba
 package co.edu.unicauca.mvc.controladores;
 
 import co.edu.unicauca.mvc.accesoADatos.InterfaceRepositorioArticulo;
