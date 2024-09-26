@@ -16,8 +16,8 @@ import javax.mail.internet.MimeMessage;
 public class GmailPlugin {
     
     public static void sendEmail() {
-        final String username = "pruebalina25@hotmail.com"; // Tu cuenta de Hotmail
-        final String password = "redire25"; // Tu contraseña de Hotmail
+        final String username = "email@hotmail.com"; // Tu cuenta de Hotmail
+        final String password = "password"; // Tu contraseña de Hotmail
         
         Properties prop = new Properties();
         prop.put("mail.smtp.host", "smtp-mail.outlook.com"); // Servidor SMTP de Hotmail
@@ -39,10 +39,10 @@ public class GmailPlugin {
             message.setFrom(new InternetAddress(username));
             message.setRecipients(
                 Message.RecipientType.TO,
-                InternetAddress.parse("anaquira@unicauca.edu.co") // Destinatario
+                InternetAddress.parse("adresee@hotmail.com") // Destinatario
             );
-            message.setSubject("Plugin");
-            message.setText("Ya envía correos Anita :3");
+            message.setSubject("Encabezado");
+            message.setText("Mensaje");
 
             // Enviar el mensaje
             Transport.send(message);
