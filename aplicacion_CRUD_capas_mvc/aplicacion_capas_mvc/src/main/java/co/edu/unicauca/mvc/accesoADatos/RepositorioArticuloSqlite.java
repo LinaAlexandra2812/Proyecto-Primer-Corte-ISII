@@ -38,7 +38,7 @@ public class RepositorioArticuloSqlite implements InterfaceRepositorioArticulo {
             pStatement.setString(5, objArticulo.getKeyword());
             pStatement.setString(6, objArticulo.getEstado());
             pStatement.executeUpdate();
-            System.out.println("Se agregó un producto exitosamente.");
+            System.out.println("Se agrego un producto exitosamente.");
             return true;
 
         } catch (SQLException ex) {
@@ -51,7 +51,7 @@ public class RepositorioArticuloSqlite implements InterfaceRepositorioArticulo {
     public List<Articulo> listarArticulos() {
         List<Articulo> articulos = new ArrayList<>();
         try {
-            String sql = "SELECT id_trabajo, titulo, descripcion, resumen, keyword, estado FROM TRABAJO;";
+            String sql = "SELECT id_trabajo, titulo, descripcion, resumen, keyword, estado FROM Trabajo;";
 
             Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery(sql);
@@ -60,6 +60,7 @@ public class RepositorioArticuloSqlite implements InterfaceRepositorioArticulo {
                 Articulo nuevoArticulo = new Articulo();
                 nuevoArticulo.setIdArticulo(rs.getInt("id_trabajo"));
                 nuevoArticulo.setTitulo(rs.getString("titulo"));
+                nuevoArticulo.setDescripcion("descripcion");
                 nuevoArticulo.setResumen(rs.getString("resumen"));
                 nuevoArticulo.setKeyword(rs.getString("keyword"));
                 nuevoArticulo.setEstado(rs.getString("estado"));
@@ -74,27 +75,6 @@ public class RepositorioArticuloSqlite implements InterfaceRepositorioArticulo {
     }
 
     @Override
-    public boolean eliminarArticulo(int idArticulo) {
-        boolean eliminado = false;
-        try{
-            String sql = "DELETE FROM Trabajo WHERE id_trabajo = ?";
-            PreparedStatement pStatement = connection.prepareStatement(sql);
-            // Asignar el valor del id
-            pStatement.setInt(1, idArticulo);
-
-            // Ejecutar el borrado
-            int rowsDeleted = pStatement.executeUpdate();
-            if (rowsDeleted > 0) {
-                eliminado = true; // Borrado exitoso si al menos una fila fue afectada
-            }
-            
-        } catch (SQLException ex){
-            Logger.getLogger(ServicioAlmacenamientoArticulos.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return eliminado;
-    }
-
-    @Override
     public Articulo consultarArticulo(int idArticulo) {
         Articulo objArticulo = null;
         try {
@@ -103,7 +83,7 @@ public class RepositorioArticuloSqlite implements InterfaceRepositorioArticulo {
             
             pStatement.setInt(1, idArticulo);
             
-            ResultSet rs = pStatement.executeQuery(sql);
+            ResultSet rs = pStatement.executeQuery();
 
             if (rs.next()){
                 objArticulo = new Articulo();
@@ -139,12 +119,35 @@ public class RepositorioArticuloSqlite implements InterfaceRepositorioArticulo {
             int rowsUpdated = pStatement.executeUpdate();
             if(rowsUpdated > 0){
                 actualizado = true;
+                System.out.println("Articulo actualizado correctamente");
             }
             
         } catch (SQLException ex){
             Logger.getLogger(ServicioAlmacenamientoArticulos.class.getName()).log(Level.SEVERE, null, ex);
         }
         return actualizado;
+    }
+    
+    @Override
+    public boolean eliminarArticulo(int idArticulo) {
+        boolean eliminado = false;
+        try{
+            String sql = "DELETE FROM Trabajo WHERE id_trabajo = ?";
+            PreparedStatement pStatement = connection.prepareStatement(sql);
+            // Asignar el valor del id
+            pStatement.setInt(1, idArticulo);
+
+            // Ejecutar el borrado
+            int rowsDeleted = pStatement.executeUpdate();
+            if (rowsDeleted > 0) {
+                eliminado = true; // Borrado exitoso si al menos una fila fue afectada
+                System.out.println("Articulo eliminados exitosamente");
+            }
+            
+        } catch (SQLException ex){
+            Logger.getLogger(ServicioAlmacenamientoArticulos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return eliminado;
     }
 
     private void initDataBase() {

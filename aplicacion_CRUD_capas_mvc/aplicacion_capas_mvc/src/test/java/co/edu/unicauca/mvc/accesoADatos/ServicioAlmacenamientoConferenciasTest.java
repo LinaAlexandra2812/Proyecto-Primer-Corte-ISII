@@ -1,7 +1,6 @@
 package co.edu.unicauca.mvc.accesoADatos;
 import co.edu.unicauca.mvc.controladores.ServicioAlmacenamientoConferencias;
 import co.edu.unicauca.mvc.modelos.Conferencia;
-import java.time.LocalDate;
 import java.util.Date;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.BeforeEach;
@@ -32,5 +31,25 @@ public class ServicioAlmacenamientoConferenciasTest {
         boolean resultado = servicio.almacenarConferencia(nuevaConferencia);
         
         assertTrue(resultado, "La conferencia debería almacenarse correctamente");
+    }
+    
+    @Test
+    public void listarConferenciasTest(){
+        
+    }
+    
+    @Test
+    public void eliminarConferenciaTest(){
+        
+    }
+    
+    @Test
+    public void consultarConferenciaTest(){
+        
+    }
+    
+    @Test
+    public void actulizarConferenciaTest(){
+        
     }
 }
