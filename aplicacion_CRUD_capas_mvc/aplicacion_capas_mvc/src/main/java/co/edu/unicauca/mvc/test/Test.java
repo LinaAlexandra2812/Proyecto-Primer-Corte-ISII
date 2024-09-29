@@ -7,6 +7,7 @@ import co.edu.unicauca.mvc.accesoADatos.RepositorioArticuloSqlite;
 import co.edu.unicauca.mvc.accesoADatos.RepositorioConferenciaMemoriaArrayList;
 import co.edu.unicauca.mvc.controladores.ServicioAlmacenamientoArticulos;
 import co.edu.unicauca.mvc.controladores.ServicioAlmacenamientoConferencias;
+import co.edu.unicauca.mvc.vistas.GUIOpciones;
 //import co.edu.unicauca.mvc.vistas.adminConferencia.VtnPrincipalAdmin;
 //import co.edu.unicauca.mvc.vistas.asistente.VtnPrincipalAsistente;
 //import co.edu.unicauca.mvc.vistas.autorPublicacion.VtnPrincipalAutor;
@@ -20,6 +21,9 @@ public class Test {
     public static void main(String[] args) {
         
         seleccionarLookAndField();
+        
+        GUIOpciones gui = new GUIOpciones();
+        gui.setVisible(true);
         
         //Para que fábrica nos de el repositorio por defecto
         InterfaceRepositorioArticulo repositorioArticulo = Factory.getInstance().getRepository("default");
@@ -67,7 +71,4 @@ public class Test {
             }
         }
     }
-    
-    
-    
 }
