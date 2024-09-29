@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package co.edu.unicauca.mvc.vistas.GestionConferencias;
+package co.edu.unicauca.mvc.vistas.postular;
 
 /**
  *
@@ -48,7 +48,6 @@ public class CrearConferencia extends javax.swing.JFrame {
         jButtonRegistrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(298, 84));
 
         jPanel1.setBackground(new java.awt.Color(145, 173, 180));
         jPanel1.setPreferredSize(new java.awt.Dimension(376, 40));
