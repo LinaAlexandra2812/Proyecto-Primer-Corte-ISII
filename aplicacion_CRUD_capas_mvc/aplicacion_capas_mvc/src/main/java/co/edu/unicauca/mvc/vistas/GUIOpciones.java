@@ -277,13 +277,6 @@ public class GUIOpciones extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         FlatMaterialLighterIJTheme.setup();
         //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new GUIOpciones().setVisible(true);
-            }
-        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
