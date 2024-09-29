@@ -17,9 +17,10 @@ public class ServicioAlmacenamientoAutores {
         return this.referenciaRepositorioAutor.almacenarAutor(objAutor);
     }
       
+    //Error al listar artículos
     public List<Autor> listarAutores()
     {
-        return this.referenciaRepositorioAutor.listarAutores();
+        return this.referenciaRepositorioAutor.listarArticulos();
     }
     
     public boolean eliminarAutor(int idAutor)

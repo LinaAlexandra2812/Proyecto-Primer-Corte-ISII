@@ -18,7 +18,7 @@ import javax.mail.internet.MimeMessage;
 public class OutlookPlugin implements ISendEmail{
 
     @Override
-    public boolean sendEmail(Email email) {
+    public void sendEmail(Email email) {
    Properties prop = new Properties();
         prop.put("mail.smtp.host", "smtp-mail.outlook.com"); // Servidor SMTP de Hotmail
         prop.put("mail.smtp.port", "587"); // Puerto para TLS
@@ -49,11 +49,9 @@ public class OutlookPlugin implements ISendEmail{
             Transport.send(message);
 
             System.out.println("Correo enviado correctamente");
-            return true;
 
         } catch (MessagingException e) {
             e.printStackTrace();
-            return false;
         }
     }
 }

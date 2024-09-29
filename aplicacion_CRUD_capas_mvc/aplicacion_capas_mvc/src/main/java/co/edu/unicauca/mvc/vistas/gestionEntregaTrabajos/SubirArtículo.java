@@ -4,11 +4,16 @@
  */
 package co.edu.unicauca.mvc.vistas.gestionEntregaTrabajos;
 
+import co.edu.unicauca.mk.common.entities.Email;
+import co.edu.unicauca.mvc.controladores.ServicioEmail;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author karen
  */
 public class SubirArtículo extends javax.swing.JFrame {
+    ServicioEmail servicioEmail = new ServicioEmail();
 
     /**
      * Creates new form SubirArtículo
@@ -120,6 +125,11 @@ public class SubirArtículo extends javax.swing.JFrame {
         jButtonEnviar.setFont(new java.awt.Font("Nirmala UI Semilight", 0, 18)); // NOI18N
         jButtonEnviar.setForeground(new java.awt.Color(255, 255, 255));
         jButtonEnviar.setText("ENVIAR");
+        jButtonEnviar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonEnviarActionPerformed(evt);
+            }
+        });
 
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -219,6 +229,26 @@ public class SubirArtículo extends javax.swing.JFrame {
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
+
+    private void jButtonEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEnviarActionPerformed
+        //Conexión a la Base de Datos
+        String autorEmail = "linaalexdiaz@unicauca.edu.co";
+        
+        //Mensaje de recepción exitoso
+        JOptionPane.showMessageDialog(this, "Artículo subido exitosamente. En espera de revisión", "Información", JOptionPane.INFORMATION_MESSAGE);
+        
+        //Envío de correo
+        Email email = new Email (autorEmail, "Envío de artículo", "Le informamos que se ha realizado la recepción un artículo.", "h");
+        
+        try{
+            servicioEmail.serviceSendEmail(email);
+        } catch (Exception exception) {
+            
+        }
+        
+        //Mensaje de error en recepción
+        JOptionPane.showMessageDialog(this, "Ha ocurrido un error al recibir el artículo. Por favor, vuelva a intentarlo", "Error", JOptionPane.ERROR_MESSAGE);
+    }//GEN-LAST:event_jButtonEnviarActionPerformed
 
     /**
      * @param args the command line arguments

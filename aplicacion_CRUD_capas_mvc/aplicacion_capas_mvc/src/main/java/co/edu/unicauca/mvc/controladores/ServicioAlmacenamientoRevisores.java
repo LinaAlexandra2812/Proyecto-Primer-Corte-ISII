@@ -13,7 +13,7 @@ public class ServicioAlmacenamientoRevisores {
     }
 
     public boolean almacenarRevisor(Revisor objRevisor) {
-        return this.referenciaRepositorioRevisor.almacenarRevisor(objRevisor);
+        return this.referenciaRepositorioRevisor.almacenarRevisores(objRevisor);
     }
 
     public List<Revisor> listarArticulos() {

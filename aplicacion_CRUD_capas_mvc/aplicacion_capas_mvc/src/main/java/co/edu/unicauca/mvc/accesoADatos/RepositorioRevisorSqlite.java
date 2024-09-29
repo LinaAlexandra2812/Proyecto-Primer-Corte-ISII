@@ -13,7 +13,7 @@ public class RepositorioRevisorSqlite implements InterfaceRepositorioRevisor{
     }
     
     @Override
-    public boolean almacenarRevisor(Revisor objRevisor) {
+    public boolean almacenarRevisores(Revisor objRevisor) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
