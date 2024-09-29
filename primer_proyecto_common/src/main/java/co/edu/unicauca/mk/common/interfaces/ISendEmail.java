@@ -7,6 +7,6 @@ package co.edu.unicauca.mk.common.interfaces;
  */
 public interface ISendEmail {
     
-    void sendEmail(String username, String password, String addressee);
+    void sendEmail(String username, String password, String addressee, String m, String affair);
     
 }
