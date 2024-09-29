@@ -24,7 +24,7 @@ public class RepositorioAutorSqlite implements InterfaceRepositorioAutor {
     }
 
     @Override
-    public List<Autor> listarArticulos() {
+    public List<Autor> listarAutores() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
@@ -87,5 +87,4 @@ public class RepositorioAutorSqlite implements InterfaceRepositorioAutor {
             System.out.println(ex.getMessage());
         }
     }
-
 }

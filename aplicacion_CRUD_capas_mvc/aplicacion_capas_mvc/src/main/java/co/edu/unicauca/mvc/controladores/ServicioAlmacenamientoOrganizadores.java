@@ -1,13 +1,21 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package co.edu.unicauca.mvc.controladores;
 
-/**
- *
- * @author anais
- */
+import co.edu.unicauca.mvc.accesoADatos.InterfaceRepositorioOrganizador;
+import co.edu.unicauca.mvc.modelos.Organizador;
+import java.util.List;
+
 public class ServicioAlmacenamientoOrganizadores {
+    private InterfaceRepositorioOrganizador referenciaRepositorioOrganizador;
+
+    public ServicioAlmacenamientoOrganizadores(InterfaceRepositorioOrganizador referenciaRepositorioOrganizador) {
+        this.referenciaRepositorioOrganizador = referenciaRepositorioOrganizador;
+    }
     
+    public boolean almacenarOrganizador(Organizador objOrganizador) {
+        return this.referenciaRepositorioOrganizador.almacenarOrganizador(objOrganizador);
+    }
+    
+    public List<Organizador> listarOrganizadores() {
+        return this.referenciaRepositorioOrganizador.listarOrganizadores();
+    }
 }
