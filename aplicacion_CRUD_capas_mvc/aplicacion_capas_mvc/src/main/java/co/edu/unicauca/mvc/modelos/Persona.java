@@ -4,6 +4,7 @@ public class Persona {
     private int cedula;
     private String nombre;
     private String correo;
+<<<<<<< HEAD
     private String password;
     private int telefono;
     private int rol;
@@ -13,6 +14,15 @@ public class Persona {
         this.nombre = nombre;
         this.correo = correo;
         this.password = password;
+=======
+    private int telefono;
+    private String rol;
+
+    public Persona(int cedula, String nombre, String correo, int telefono, String rol) {
+        this.cedula = cedula;
+        this.nombre = nombre;
+        this.correo = correo;
+>>>>>>> main
         this.telefono = telefono;
         this.rol = rol;
     }
@@ -41,6 +51,7 @@ public class Persona {
         this.correo = correo;
     }
 
+<<<<<<< HEAD
     public String getPassword() {
         return password;
     }
@@ -49,6 +60,8 @@ public class Persona {
         this.password = password;
     }
 
+=======
+>>>>>>> main
     public int getTelefono() {
         return telefono;
     }
@@ -57,6 +70,7 @@ public class Persona {
         this.telefono = telefono;
     }
 
+<<<<<<< HEAD
     public int getRol() {
         return rol;
     }
@@ -65,4 +79,13 @@ public class Persona {
         this.rol = rol;
     }
     
+=======
+    public String getRol() {
+        return rol;
+    }
+
+    public void setRol(String rol) {
+        this.rol = rol;
+    }
+>>>>>>> main
 }

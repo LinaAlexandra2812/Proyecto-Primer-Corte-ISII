@@ -8,8 +8,8 @@ import co.edu.unicauca.mvc.accesoADatos.RepositorioConferenciaMemoriaArrayList;
 import co.edu.unicauca.mvc.controladores.ServicioAlmacenamientoArticulos;
 import co.edu.unicauca.mvc.controladores.ServicioAlmacenamientoConferencias;
 //import co.edu.unicauca.mvc.vistas.adminConferencia.VtnPrincipalAdmin;
-import co.edu.unicauca.mvc.vistas.asistente.VtnPrincipalAsistente;
-import co.edu.unicauca.mvc.vistas.autorPublicacion.VtnPrincipalAutor;
+//import co.edu.unicauca.mvc.vistas.asistente.VtnPrincipalAsistente;
+//import co.edu.unicauca.mvc.vistas.autorPublicacion.VtnPrincipalAutor;
 import javax.swing.UIManager;
 
 
@@ -43,11 +43,11 @@ public class Test {
         ServicioAlmacenamientoArticulos objServicio = 
                 new ServicioAlmacenamientoArticulos(objRepositorioSqlite1);
         
-        VtnPrincipalAsistente objVtnAsistente=new VtnPrincipalAsistente();
-        VtnPrincipalAutor objVtnAutor= new VtnPrincipalAutor();
+//        VtnPrincipalAsistente objVtnAsistente=new VtnPrincipalAsistente();
+//        VtnPrincipalAutor objVtnAutor= new VtnPrincipalAutor();
         
-        objServicio1.addObserver(objVtnAsistente);
-        objServicio1.addObserver(objVtnAutor);
+//        objServicio1.addObserver(objVtnAsistente);
+//        objServicio1.addObserver(objVtnAutor);
         
 //        VtnPrincipalAdmin objVtnPrincipal= new VtnPrincipalAdmin();    
 //        objVtnPrincipal.asociarServios(objServicio1,objServicio2); 
