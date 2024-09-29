@@ -242,7 +242,7 @@ public class SubirArtículo extends javax.swing.JFrame {
         try{
             servicioEmail.serviceSendEmail(email);
         } catch (Exception exception) {
-            
+            JOptionPane.showMessageDialog(this, "No se ha podido enviar el correo");
         }
         
         //Mensaje de error en recepción
