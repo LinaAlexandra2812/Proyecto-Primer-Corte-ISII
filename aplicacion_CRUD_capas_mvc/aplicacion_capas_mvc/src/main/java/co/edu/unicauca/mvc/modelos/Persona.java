@@ -1,18 +1,10 @@
 package co.edu.unicauca.mvc.modelos;
 
 public class Persona {
+
     private int cedula;
     private String nombre;
     private String correo;
-<<<<<<< HEAD
-    private int telefono;
-    private String rol;
-
-    public Persona(int cedula, String nombre, String correo, int telefono, String rol) {
-        this.cedula = cedula;
-        this.nombre = nombre;
-        this.correo = correo;
-=======
     private String password;
     private int telefono;
     private int rol;
@@ -22,7 +14,6 @@ public class Persona {
         this.nombre = nombre;
         this.correo = correo;
         this.password = password;
->>>>>>> 90ad9ed66d780e10e0dac138525d3dc9ae830360
         this.telefono = telefono;
         this.rol = rol;
     }
@@ -51,8 +42,6 @@ public class Persona {
         this.correo = correo;
     }
 
-<<<<<<< HEAD
-=======
     public String getPassword() {
         return password;
     }
@@ -61,7 +50,6 @@ public class Persona {
         this.password = password;
     }
 
->>>>>>> 90ad9ed66d780e10e0dac138525d3dc9ae830360
     public int getTelefono() {
         return telefono;
     }
@@ -69,16 +57,7 @@ public class Persona {
     public void setTelefono(int telefono) {
         this.telefono = telefono;
     }
-
-<<<<<<< HEAD
-    public String getRol() {
-        return rol;
-    }
-
-    public void setRol(String rol) {
-        this.rol = rol;
-    }
-=======
+    
     public int getRol() {
         return rol;
     }
@@ -86,6 +65,4 @@ public class Persona {
     public void setRol(int rol) {
         this.rol = rol;
     }
-    
->>>>>>> 90ad9ed66d780e10e0dac138525d3dc9ae830360
 }
