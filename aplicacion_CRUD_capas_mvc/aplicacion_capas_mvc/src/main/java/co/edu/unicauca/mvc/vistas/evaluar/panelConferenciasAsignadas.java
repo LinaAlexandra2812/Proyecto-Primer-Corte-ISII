@@ -2,10 +2,16 @@ package co.edu.unicauca.mvc.vistas.evaluar;
 
 import co.edu.unicauca.mvc.vistas.GUIOpciones;
 import co.edu.unicauca.mvc.vistas.evaluar.panelConferenciaEspecifica;
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.awt.GridLayout;
+import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.List;
+import javax.swing.BorderFactory;
 import javax.swing.JButton;
 
 /**
@@ -27,14 +33,41 @@ public class panelConferenciasAsignadas extends javax.swing.JPanel {
         // Esto después debe venir de la base de datos
         List<String> conferencias = List.of("Conferencia A", "Conferencia B", "Conferencia C");
 
-        // Ajustamos el layout para mostrar los botones en una columna
-        espacioConfes.setLayout(new GridLayout(0, 1, 10, 10));
+        jPanel2.setLayout(new GridBagLayout());
+        GridBagConstraints gbc = new GridBagConstraints();
+        gbc.gridx = 0;
+        gbc.gridy = GridBagConstraints.RELATIVE;
+        gbc.insets = new Insets(10, 0, 10, 0);  // Espacio entre los botones
+        gbc.anchor = GridBagConstraints.CENTER; // Centramos los botones
 
+       
         for (String conferencia : conferencias) {
             JButton btnConferencia = new JButton(conferencia);
             espacioConfes.add(btnConferencia); 
+            
+            // Establecemos el tamaño y el estilo de los botones
+            btnConferencia.setPreferredSize(new Dimension(200, 40)); // Tamaño más pequeño para los botones
+            btnConferencia.setBackground(Color.WHITE);
+            btnConferencia.setOpaque(true);
+            btnConferencia.setBorder(BorderFactory.createLineBorder(new Color(143, 142, 142), 2, true)); // Borde redondeado
 
-            // Añadir un ActionListener para manejar el clic en cada botón
+            // Efecto hover para cambiar el color cuando el mouse está sobre el botón
+            btnConferencia.addMouseListener(new java.awt.event.MouseAdapter() {
+                public void mouseEntered(java.awt.event.MouseEvent evt) {
+                    btnConferencia.setBackground(new Color(145, 173, 180)); // Cambia color al pasar mouse
+                    btnConferencia.setForeground(Color.WHITE); // Cambia color del texto
+                }
+
+                public void mouseExited(java.awt.event.MouseEvent evt) {
+                    btnConferencia.setBackground(Color.WHITE); // Vuelve al color blanco
+                    btnConferencia.setForeground(Color.BLACK); // Vuelve el texto al color negro
+                }
+            });
+
+           // Añadimos el botón al panel
+            jPanel2.add(btnConferencia, gbc);
+
+            // Añadimos acción para redirigir al panel de detalles específicos
             btnConferencia.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
@@ -42,10 +75,11 @@ public class panelConferenciasAsignadas extends javax.swing.JPanel {
                 }
             });
         }
-        espacioConfes.revalidate();
-        espacioConfes.repaint();
-    }
 
+        // Refrescamos el panel
+        jPanel2.revalidate();
+        jPanel2.repaint();
+    }
     // Método que redirige al panel de detalles específicos de una conferencia
     private void mostrarPanelConferenciaEspecifica(String conferencia) {
         // Aquí debes usar el método que cambia de panel en tu GUI principal
@@ -64,8 +98,8 @@ public class panelConferenciasAsignadas extends javax.swing.JPanel {
     private void initComponents() {
 
         espacioConfes = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(236, 236, 236));
         setPreferredSize(new java.awt.Dimension(620, 400));
@@ -73,19 +107,26 @@ public class panelConferenciasAsignadas extends javax.swing.JPanel {
 
         espacioConfes.setBackground(new java.awt.Color(236, 236, 236));
 
-        jLabel1.setText("Conferencias Asignadas");
-
         jPanel2.setBackground(new java.awt.Color(236, 236, 236));
+
+        jLabel1.setFont(new java.awt.Font("Nirmala UI", 1, 18)); // NOI18N
+        jLabel1.setText("Conferencias Asignadas");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 339, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(82, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(55, 55, 55))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 265, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addContainerGap(234, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout espacioConfesLayout = new javax.swing.GroupLayout(espacioConfes);
@@ -93,24 +134,16 @@ public class panelConferenciasAsignadas extends javax.swing.JPanel {
         espacioConfesLayout.setHorizontalGroup(
             espacioConfesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(espacioConfesLayout.createSequentialGroup()
-                .addGroup(espacioConfesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(espacioConfesLayout.createSequentialGroup()
-                        .addGap(234, 234, 234)
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 108, Short.MAX_VALUE))
-                    .addGroup(espacioConfesLayout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(151, 151, 151))
+                .addGap(131, 131, 131)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(150, 150, 150))
         );
         espacioConfesLayout.setVerticalGroup(
             espacioConfesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(espacioConfesLayout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(64, Short.MAX_VALUE))
+                .addGap(86, 86, 86)
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(49, 49, 49))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -121,7 +154,7 @@ public class panelConferenciasAsignadas extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(espacioConfes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(espacioConfes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
