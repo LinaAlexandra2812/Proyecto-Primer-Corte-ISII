@@ -110,6 +110,7 @@ public class GUIOpciones extends javax.swing.JFrame {
         panelBusqueda.setBackground(new java.awt.Color(145, 173, 180));
 
         btnDesplegar.setBackground(new java.awt.Color(236, 236, 236));
+        btnDesplegar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/3rayitas.png"))); // NOI18N
         btnDesplegar.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 10, 1, 1, new java.awt.Color(0, 0, 0)));
         btnDesplegar.setBorderPainted(false);
         btnDesplegar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
