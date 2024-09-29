@@ -17,7 +17,7 @@ public class ServicioAlmacenamientoConferencias extends Subject{
     
     public boolean almacenarConferencia(Conferencia objConfererencia) {
         boolean bandera=this.referenciaRepositorioConferencias.almacenarConferencia(objConfererencia);
-        this.notifyAllObserves();
+        //this.notifyAllObserves();
         return bandera;
     }
 

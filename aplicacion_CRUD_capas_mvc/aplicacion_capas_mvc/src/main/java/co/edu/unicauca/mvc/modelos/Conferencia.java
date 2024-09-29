@@ -5,15 +5,31 @@ import java.util.Date;
 public class Conferencia {
     private int idConferencia;
     private String nombre;
+    private String lugar;
+    private String tema;
+    private String descripcion;
+    private String contacto;
     private Date fechaInicio;
     private Date fechaFin;   
     private float costoInscripcion;
+    
+    private Organizador organizador;
+    
+    public Conferencia(){
+        
+    }
 
-    public Conferencia(String nombre, Date fechaInicio, Date fechaFin, float costoInscripcion) {
+    public Conferencia(int idConferencia, String nombre, String lugar, String tema, String descripcion, String contacto, Date fechaInicio, Date fechaFin, float costoInscripcion, Organizador organizador) {
+        this.idConferencia = idConferencia;
         this.nombre = nombre;
+        this.lugar = lugar;
+        this.tema = tema;
+        this.descripcion = descripcion;
+        this.contacto = contacto;
         this.fechaInicio = fechaInicio;
-        this.fechaFin = fechaFin;        
+        this.fechaFin = fechaFin;
         this.costoInscripcion = costoInscripcion;
+        this.organizador = organizador;
     }
 
     public int getIdConferencia() {
@@ -33,6 +49,38 @@ public class Conferencia {
         this.nombre = nombre;
     }
 
+    public String getLugar() {
+        return lugar;
+    }
+
+    public void setLugar(String lugar) {
+        this.lugar = lugar;
+    }
+
+    public String getTema() {
+        return tema;
+    }
+
+    public void setTema(String tema) {
+        this.tema = tema;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public String getContacto() {
+        return contacto;
+    }
+
+    public void setContacto(String contacto) {
+        this.contacto = contacto;
+    }
+    
     public Date getFechaInicio() {
         return fechaInicio;
     }
@@ -63,4 +111,5 @@ public class Conferencia {
     {
         return this.nombre;
     }
+
 }

@@ -1,3 +1,16 @@
+# NetBeans specific
+nbproject/private/
+nbproject/nbbuild.xml
+nbproject/build-impl.xml
+nbproject/genfiles.properties
+nbproject/project.properties
+nbproject/project.xml
+
+# Build output
+build/
+dist/
+target/
+
 # Compiled class file
 *.class
 
@@ -12,9 +25,11 @@
 
 # Package Files #
 *.jar
+*.bak
 *.war
 *.nar
 *.ear
+*.swp
 *.zip
 *.tar.gz
 *.rar
@@ -23,3 +38,4 @@
 hs_err_pid*
 replay_pid*
 /aplicacion_CRUD_capas_mvc/aplicacion_capas_mvc/target/
+/aplicacion_CRUD_capas_mvc/aplicacion_capas_mvc/target
