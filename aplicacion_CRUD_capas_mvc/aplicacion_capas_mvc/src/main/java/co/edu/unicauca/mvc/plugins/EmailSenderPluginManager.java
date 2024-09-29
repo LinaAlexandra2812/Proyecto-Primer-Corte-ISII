@@ -74,6 +74,5 @@ public class EmailSenderPluginManager {
         } catch (IOException ex) {
             Logger.getLogger("DeliveryPluginManager").log(Level.SEVERE, "Error al ejecutar la aplicación", ex);
         }
-
     }
 }

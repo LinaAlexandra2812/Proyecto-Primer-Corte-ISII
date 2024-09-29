@@ -1,5 +1,6 @@
 package co.edu.unicacuca.mk.plugins.outlookplugin;
 
+import co.edu.unicauca.mk.common.entities.Email;
 import co.edu.unicauca.mk.common.interfaces.ISendEmail;
 import java.util.Properties;
 import javax.mail.Message;
@@ -17,7 +18,7 @@ import javax.mail.internet.MimeMessage;
 public class OutlookPlugin implements ISendEmail{
 
     @Override
-    public void sendEmail(String username, String password, String addressee, String m, String affair) {
+    public boolean sendEmail(Email email) {
    Properties prop = new Properties();
         prop.put("mail.smtp.host", "smtp-mail.outlook.com"); // Servidor SMTP de Hotmail
         prop.put("mail.smtp.port", "587"); // Puerto para TLS
@@ -29,28 +30,30 @@ public class OutlookPlugin implements ISendEmail{
             new javax.mail.Authenticator() {
                 @Override
                 protected PasswordAuthentication getPasswordAuthentication() {
-                    return new PasswordAuthentication(username, password);
+                    return new PasswordAuthentication(email.getUsername(), email.getPassword());
                 }
             });
         
         try {
             // Crear el mensaje
             Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress(username));
+            message.setFrom(new InternetAddress(email.getUsername()));
             message.setRecipients(
                 Message.RecipientType.TO,
-                InternetAddress.parse(addressee) // Destinatario
+                InternetAddress.parse(email.getDestinatario()) // Destinatario
             );
-            message.setSubject(affair);
-            message.setText(m);
+            message.setSubject(email.getAsunto());
+            message.setText(email.getContenido());
 
             // Enviar el mensaje
             Transport.send(message);
 
             System.out.println("Correo enviado correctamente");
+            return true;
 
         } catch (MessagingException e) {
             e.printStackTrace();
+            return false;
         }
     }
 }

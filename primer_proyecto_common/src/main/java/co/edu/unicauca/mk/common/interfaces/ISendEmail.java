@@ -1,12 +1,19 @@
 
 package co.edu.unicauca.mk.common.interfaces;
 
+import co.edu.unicauca.mk.common.entities.Email;
+
 /**
  *
  * @author linit
  */
 public interface ISendEmail {
     
-    void sendEmail(String username, String password, String addressee, String m, String affair);
+    /**
+     * Establece el envío de corres
+     * 
+     * @param email 
+     */
+    void sendEmail(Email email);
     
 }
