@@ -1,12 +1,15 @@
 package co.edu.unicauca.mvc.test;
 
+import co.edu.unicauca.mvc.accesoADatos.Factory;
+import co.edu.unicauca.mvc.accesoADatos.InterfaceRepositorioArticulo;
 import co.edu.unicauca.mvc.accesoADatos.RepositorioArticuloMemoriaArrayList;
+import co.edu.unicauca.mvc.accesoADatos.RepositorioArticuloSqlite;
 import co.edu.unicauca.mvc.accesoADatos.RepositorioConferenciaMemoriaArrayList;
 import co.edu.unicauca.mvc.controladores.ServicioAlmacenamientoArticulos;
 import co.edu.unicauca.mvc.controladores.ServicioAlmacenamientoConferencias;
-import co.edu.unicauca.mvc.vistas.adminConferencia.VtnPrincipalAdmin;
-import co.edu.unicauca.mvc.vistas.asistente.VtnPrincipalAsistente;
-import co.edu.unicauca.mvc.vistas.autorPublicacion.VtnPrincipalAutor;
+//import co.edu.unicauca.mvc.vistas.adminConferencia.VtnPrincipalAdmin;
+//import co.edu.unicauca.mvc.vistas.asistente.VtnPrincipalAsistente;
+//import co.edu.unicauca.mvc.vistas.autorPublicacion.VtnPrincipalAutor;
 import javax.swing.UIManager;
 
 
@@ -17,6 +20,9 @@ public class Test {
     public static void main(String[] args) {
         
         seleccionarLookAndField();
+        
+        //Para que fábrica nos de el repositorio por defecto
+        InterfaceRepositorioArticulo repositorioArticulo = Factory.getInstance().getRepository("default");
                 
         RepositorioConferenciaMemoriaArrayList objRepositorio1=
                 new RepositorioConferenciaMemoriaArrayList();
@@ -31,18 +37,24 @@ public class Test {
         ServicioAlmacenamientoArticulos objServicio2
                 = new ServicioAlmacenamientoArticulos(objRepositorio2);
         
-        VtnPrincipalAsistente objVtnAsistente=new VtnPrincipalAsistente();
-        VtnPrincipalAutor objVtnAutor= new VtnPrincipalAutor();
+        RepositorioArticuloSqlite objRepositorioSqlite1 = 
+                new RepositorioArticuloSqlite();
         
-        objServicio1.addObserver(objVtnAsistente);
-        objServicio1.addObserver(objVtnAutor);
+        ServicioAlmacenamientoArticulos objServicio = 
+                new ServicioAlmacenamientoArticulos(objRepositorioSqlite1);
         
-        VtnPrincipalAdmin objVtnPrincipal= new VtnPrincipalAdmin();    
-        objVtnPrincipal.asociarServios(objServicio1,objServicio2); 
+//        VtnPrincipalAsistente objVtnAsistente=new VtnPrincipalAsistente();
+//        VtnPrincipalAutor objVtnAutor= new VtnPrincipalAutor();
         
-        objVtnPrincipal.setVisible(true);
-        objVtnAsistente.setVisible(true);
-        objVtnAutor.setVisible(true);
+//        objServicio1.addObserver(objVtnAsistente);
+//        objServicio1.addObserver(objVtnAutor);
+        
+//        VtnPrincipalAdmin objVtnPrincipal= new VtnPrincipalAdmin();    
+//        objVtnPrincipal.asociarServios(objServicio1,objServicio2); 
+//        
+//        objVtnPrincipal.setVisible(true);
+//        objVtnAsistente.setVisible(true);
+//        objVtnAutor.setVisible(true);
     }
     
     private static void seleccionarLookAndField()

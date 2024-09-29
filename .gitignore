@@ -1,3 +1,16 @@
+# NetBeans specific
+nbproject/private/
+nbproject/nbbuild.xml
+nbproject/build-impl.xml
+nbproject/genfiles.properties
+nbproject/project.properties
+nbproject/project.xml
+
+# Build output
+build/
+dist/
+target/
+
 # Compiled class file
 *.class
 
@@ -12,9 +25,11 @@
 
 # Package Files #
 *.jar
+*.bak
 *.war
 *.nar
 *.ear
+*.swp
 *.zip
 *.tar.gz
 *.rar

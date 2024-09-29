@@ -3,7 +3,10 @@ package co.edu.unicauca.mvc.modelos;
 public class Articulo {
    private int idArticulo;
    private String titulo;
-   private String autores;
+   private String descripcion;
+   private String resumen;
+   private String keyword;
+   private String estado;
    
    private Conferencia objConferencia;
 
@@ -11,10 +14,15 @@ public class Articulo {
    {
        
    }
-    public Articulo(int idArticulo, String titulo, String autores) {
+
+    public Articulo(int idArticulo, String titulo, String descripcion, String resumen, String keyword, String estado, Conferencia objConferencia) {
         this.idArticulo = idArticulo;
         this.titulo = titulo;
-        this.autores = autores;
+        this.descripcion = descripcion;
+        this.resumen = resumen;
+        this.keyword = keyword;
+        this.estado = estado;
+        this.objConferencia = objConferencia;
     }
 
     public int getIdArticulo() {
@@ -33,21 +41,44 @@ public class Articulo {
         this.titulo = titulo;
     }
 
-    public String getAutores() {
-        return autores;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setAutores(String autores) {
-        this.autores = autores;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+    
+    public void setObjConferencia(Conferencia objConferencia) {
+        this.objConferencia = objConferencia;
+    }
+
+    public String getResumen() {
+        return resumen;
+    }
+
+    public void setResumen(String resumen) {
+        this.resumen = resumen;
+    }
+
+    public String getKeyword() {
+        return keyword;
+    }
+
+    public void setKeyword(String keyword) {
+        this.keyword = keyword;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
 
     public Conferencia getObjConferencia() {
         return objConferencia;
     }
 
-    public void setObjConferencia(Conferencia objConferencia) {
-        this.objConferencia = objConferencia;
-    }
-   
-   
 }
