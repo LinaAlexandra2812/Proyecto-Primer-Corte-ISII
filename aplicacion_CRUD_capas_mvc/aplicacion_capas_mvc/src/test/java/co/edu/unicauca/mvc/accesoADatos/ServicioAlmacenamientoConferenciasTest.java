@@ -2,6 +2,9 @@ package co.edu.unicauca.mvc.accesoADatos;
 import co.edu.unicauca.mvc.controladores.ServicioAlmacenamientoConferencias;
 import co.edu.unicauca.mvc.modelos.Conferencia;
 import java.util.Date;
+import java.util.List;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -35,21 +38,9 @@ public class ServicioAlmacenamientoConferenciasTest {
     
     @Test
     public void listarConferenciasTest(){
+        List<Conferencia> articulos = servicio.listarConferencias();
         
-    }
-    
-    @Test
-    public void eliminarConferenciaTest(){
-        
-    }
-    
-    @Test
-    public void consultarConferenciaTest(){
-        
-    }
-    
-    @Test
-    public void actulizarConferenciaTest(){
-        
+        assertNotNull(articulos, "La lista de Conferencias no deberia ser nula");
+        assertFalse(articulos.isEmpty(), "Deberia haber al menos una conferencia almacenado");
     }
 }
