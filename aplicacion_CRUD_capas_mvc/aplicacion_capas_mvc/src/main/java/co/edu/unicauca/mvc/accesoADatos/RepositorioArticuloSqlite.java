@@ -28,15 +28,14 @@ public class RepositorioArticuloSqlite implements InterfaceRepositorioArticulo {
                 return false;
             }
 
-            String sql = "INSERT INTO Trabajo (id_trabajo, titulo, descripcion, resumen, keyword, estado) "
-                    + "VALUES (?, ?, ?, ?, ?, ?)\n";
+            String sql = "INSERT INTO Trabajo (id_trabajo, titulo, resumen, keyword, estado) "
+                    + "VALUES (?, ?, ?, ?, ?)\n";
 
             PreparedStatement pStatement = connection.prepareStatement(sql);
             pStatement.setString(2, objArticulo.getTitulo());
-            pStatement.setString(3, objArticulo.getDescripcion());
-            pStatement.setString(4, objArticulo.getResumen());
-            pStatement.setString(5, objArticulo.getKeyword());
-            pStatement.setString(6, objArticulo.getEstado());
+            pStatement.setString(3, objArticulo.getResumen());
+            pStatement.setString(4, objArticulo.getKeyword());
+            pStatement.setString(5, objArticulo.getEstado());
             pStatement.executeUpdate();
             System.out.println("Se agrego un producto exitosamente.");
             return true;
@@ -51,7 +50,7 @@ public class RepositorioArticuloSqlite implements InterfaceRepositorioArticulo {
     public List<Articulo> listarArticulos() {
         List<Articulo> articulos = new ArrayList<>();
         try {
-            String sql = "SELECT id_trabajo, titulo, descripcion, resumen, keyword, estado FROM Trabajo;";
+            String sql = "SELECT id_trabajo, titulo, resumen, keyword, estado FROM Trabajo;";
 
             Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery(sql);
@@ -60,7 +59,6 @@ public class RepositorioArticuloSqlite implements InterfaceRepositorioArticulo {
                 Articulo nuevoArticulo = new Articulo();
                 nuevoArticulo.setIdArticulo(rs.getInt("id_trabajo"));
                 nuevoArticulo.setTitulo(rs.getString("titulo"));
-                nuevoArticulo.setDescripcion("descripcion");
                 nuevoArticulo.setResumen(rs.getString("resumen"));
                 nuevoArticulo.setKeyword(rs.getString("keyword"));
                 nuevoArticulo.setEstado(rs.getString("estado"));
@@ -89,7 +87,6 @@ public class RepositorioArticuloSqlite implements InterfaceRepositorioArticulo {
                 objArticulo = new Articulo();
                 objArticulo.setIdArticulo(rs.getInt("id_trabajo"));
                 objArticulo.setTitulo(rs.getString("titulo"));
-                objArticulo.setDescripcion(rs.getString("descripcion"));
                 objArticulo.setResumen(rs.getString("resumen"));
                 objArticulo.setKeyword(rs.getString("keyword"));
                 objArticulo.setEstado(rs.getString("estado"));
@@ -106,15 +103,14 @@ public class RepositorioArticuloSqlite implements InterfaceRepositorioArticulo {
     public boolean actualizarArticulo(Articulo objArticulo) {
         boolean actualizado = false;
         try{
-            String sql = "UPDATE Trabajo SET titulo = ?, descripcion = ?, resumen = ?, keyword = ?, estado = ? WHERE id_trabajo = ?";
+            String sql = "UPDATE Trabajo SET titulo = ?,  resumen = ?, keyword = ?, estado = ? WHERE id_trabajo = ?";
             PreparedStatement pStatement = connection.prepareStatement(sql);
             
             pStatement.setString(1, objArticulo.getTitulo());
-            pStatement.setString(2, objArticulo.getDescripcion());
-            pStatement.setString(3, objArticulo.getResumen());
-            pStatement.setString(4, objArticulo.getKeyword());
-            pStatement.setString(5, objArticulo.getEstado());
-            pStatement.setInt(6, objArticulo.getIdArticulo());
+            pStatement.setString(2, objArticulo.getResumen());
+            pStatement.setString(3, objArticulo.getKeyword());
+            pStatement.setString(4, objArticulo.getEstado());
+            pStatement.setInt(5, objArticulo.getIdArticulo());
             
             int rowsUpdated = pStatement.executeUpdate();
             if(rowsUpdated > 0){
@@ -154,7 +150,7 @@ public class RepositorioArticuloSqlite implements InterfaceRepositorioArticulo {
         String sql = "CREATE TABLE IF NOT EXISTS Trabajo (\n"
                 + "     id_trabajo INTEGER PRIMARY KEY AUTOINCREMENT,\n"
                 + "     titulo TEXT,\n"
-                + "     descripcion TEXT, resumen TEXT,\n"
+                + "     resumen TEXT,\n"
                 + "     keyword TEXT,\n"
                 + "     estado TEXT,\n"
                 + "     CHECK ((estado = 'Aceptado' OR estado = 'Rechazado' OR estado = 'En revision' OR estado = 'Pendiente evaluacion'))"

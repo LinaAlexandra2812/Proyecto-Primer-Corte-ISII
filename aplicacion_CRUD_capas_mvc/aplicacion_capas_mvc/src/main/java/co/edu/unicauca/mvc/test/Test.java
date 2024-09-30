@@ -22,12 +22,15 @@ public class Test {
         
         seleccionarLookAndField();
         
-        GUIOpciones gui = new GUIOpciones();
-        gui.setVisible(true);
+       
         
         //Para que fábrica nos de el repositorio por defecto
         InterfaceRepositorioArticulo repositorioArticulo = Factory.getInstance().getRepository("default");
-                
+        
+        ServicioAlmacenamientoArticulos objServicioArticulos = new ServicioAlmacenamientoArticulos(repositorioArticulo);
+        GUIOpciones gui = new GUIOpciones(objServicioArticulos);
+        gui.setVisible(true);
+        
         RepositorioConferenciaMemoriaArrayList objRepositorio1=
                 new RepositorioConferenciaMemoriaArrayList();
         

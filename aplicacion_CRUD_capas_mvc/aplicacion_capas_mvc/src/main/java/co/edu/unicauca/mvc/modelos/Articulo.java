@@ -3,7 +3,6 @@ package co.edu.unicauca.mvc.modelos;
 public class Articulo {
    private int idArticulo;
    private String titulo;
-   private String descripcion;
    private String resumen;
    private String keyword;
    private String estado;
@@ -15,14 +14,11 @@ public class Articulo {
        
    }
 
-    public Articulo(int idArticulo, String titulo, String descripcion, String resumen, String keyword, String estado, Conferencia objConferencia) {
-        this.idArticulo = idArticulo;
+    public Articulo( String titulo, String resumen, String keyword, String estado) {
         this.titulo = titulo;
-        this.descripcion = descripcion;
         this.resumen = resumen;
         this.keyword = keyword;
         this.estado = estado;
-        this.objConferencia = objConferencia;
     }
 
     public int getIdArticulo() {
@@ -41,13 +37,6 @@ public class Articulo {
         this.titulo = titulo;
     }
 
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
     
     public void setObjConferencia(Conferencia objConferencia) {
         this.objConferencia = objConferencia;

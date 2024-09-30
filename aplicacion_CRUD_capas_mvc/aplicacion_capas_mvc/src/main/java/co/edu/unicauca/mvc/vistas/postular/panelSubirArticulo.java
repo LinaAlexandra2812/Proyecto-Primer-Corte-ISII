@@ -1,16 +1,23 @@
 package co.edu.unicauca.mvc.vistas.postular;
 
+import co.edu.unicauca.mk.common.entities.Email;
+import co.edu.unicauca.mvc.controladores.ServicioAlmacenamientoArticulos;
+import co.edu.unicauca.mvc.controladores.ServicioEmail;
+import co.edu.unicauca.mvc.modelos.Articulo;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author earea
  */
 public class panelSubirArticulo extends javax.swing.JPanel {
+    ServicioEmail servicioEmail = new ServicioEmail();
+    private ServicioAlmacenamientoArticulos objServicioArticulos ; 
 
-    /**
-     * Creates new form panelSubirArtículo
-     */
-    public panelSubirArticulo() {
+   
+    public panelSubirArticulo(ServicioAlmacenamientoArticulos objServicioArticulos) {
         initComponents();
+        this.objServicioArticulos = objServicioArticulos;
     }
 
     /**
@@ -30,9 +37,9 @@ public class panelSubirArticulo extends javax.swing.JPanel {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        jTextFieldTitulo = new javax.swing.JTextField();
+        jTextFieldResumen = new javax.swing.JTextField();
+        jTextFieldPalabrasClave = new javax.swing.JTextField();
 
         jPanel1.setBackground(new java.awt.Color(236, 236, 236));
 
@@ -40,6 +47,11 @@ public class panelSubirArticulo extends javax.swing.JPanel {
         jButton1.setFont(new java.awt.Font("Nirmala UI Semilight", 0, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("CARGAR");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jPanel2.setBackground(new java.awt.Color(236, 236, 236));
 
@@ -63,10 +75,15 @@ public class panelSubirArticulo extends javax.swing.JPanel {
         jButton2.setFont(new java.awt.Font("Nirmala UI Semilight", 0, 18)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("ENVIAR");
-
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jTextFieldTitulo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldTituloActionPerformed(evt);
             }
         });
 
@@ -83,9 +100,9 @@ public class panelSubirArticulo extends javax.swing.JPanel {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE)
-                                .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addComponent(jTextFieldPalabrasClave, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 182, Short.MAX_VALUE)
+                                .addComponent(jTextFieldResumen, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jTextFieldTitulo, javax.swing.GroupLayout.Alignment.LEADING))
                             .addGap(52, 52, 52))
                         .addGroup(jPanel2Layout.createSequentialGroup()
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -103,15 +120,15 @@ public class panelSubirArticulo extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTextFieldTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTextFieldResumen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jTextFieldPalabrasClave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jButton2)
                 .addContainerGap(18, Short.MAX_VALUE))
@@ -156,9 +173,67 @@ public class panelSubirArticulo extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void jTextFieldTituloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldTituloActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_jTextFieldTituloActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        String titulo, resumen, palabrasClave;
+        boolean bandera;
+
+        titulo = this.jTextFieldTitulo.getText();
+        resumen = this.jTextFieldResumen.getText();
+        palabrasClave = this.jTextFieldPalabrasClave.getText();
+
+        Articulo objArticulo = new Articulo(titulo, resumen, palabrasClave, "En revision");
+        objArticulo.setIdArticulo(1);
+
+        bandera = this.objServicioArticulos.almacenarArticulo(objArticulo);
+        
+        if (bandera == true){
+             JOptionPane.showMessageDialog(this, "Artículo subido exitosamente. En espera de revisión", "Información", JOptionPane.INFORMATION_MESSAGE);
+        }
+        else {
+           JOptionPane.showMessageDialog(this, "Ha ocurrido un error al recibir el artículo. Por favor, vuelva a intentarlo", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+
+        if (jTextFieldResumen.getText().trim().isEmpty()) {
+        // Mostrar mensaje emergente de que el campo Resumen es obligatorio
+        JOptionPane.showMessageDialog(this, "El campo Resumen es obligatorio", "Información", JOptionPane.INFORMATION_MESSAGE);
+        return; // Salir del método si no se ha llenado el resumen
+    }    
+
+        //Conexión a la Base de Datos
+        String autorEmail = "linaalexdiaz@unicauca.edu.co";
+        
+        //Mensaje de recepción exitoso
+        JOptionPane.showMessageDialog(this, "Artículo subido exitosamente. En espera de revisión", "Información", JOptionPane.INFORMATION_MESSAGE);
+        
+        //Envío de correo
+        Email email = new Email (autorEmail, "Envío de artículo", "Le informamos que se ha realizado la recepción un artículo.", "h");
+        
+        try{
+            servicioEmail.serviceSendEmail(email);
+        } catch (Exception exception) {
+            
+        }
+        
+        //Mensaje de error en recepción
+        JOptionPane.showMessageDialog(this, "Ha ocurrido un error al recibir el artículo. Por favor, vuelva a intentarlo", "Error", JOptionPane.ERROR_MESSAGE);
+   
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       //  obtiene el nombre del archivo de un campo de texto
+    String nombreArchivo = jTextFieldTitulo.getText();
+
+    // Verificación del formato del archivo (solo permite PDF)
+    if (!nombreArchivo.endsWith(".pdf")) {
+        // Mostrar mensaje emergente 
+        JOptionPane.showMessageDialog(this, "Error de Formato de Archivo (.PDF)", "Información", JOptionPane.INFORMATION_MESSAGE);
+        return; 
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -170,8 +245,8 @@ public class panelSubirArticulo extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextFieldPalabrasClave;
+    private javax.swing.JTextField jTextFieldResumen;
+    private javax.swing.JTextField jTextFieldTitulo;
     // End of variables declaration//GEN-END:variables
 }

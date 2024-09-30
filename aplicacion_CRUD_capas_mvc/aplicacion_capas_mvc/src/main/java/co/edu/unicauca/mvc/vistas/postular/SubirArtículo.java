@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  * @author karen
  */
 public class SubirArtículo extends javax.swing.JFrame {
-    ServicioEmail servicioEmail = new ServicioEmail();
+    
 
     /**
      * Creates new form SubirArtículo
@@ -46,7 +46,6 @@ public class SubirArtículo extends javax.swing.JFrame {
         jTextField3 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
         jButtonCargar2 = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -194,8 +193,6 @@ public class SubirArtículo extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setText("jLabel3");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -205,9 +202,7 @@ public class SubirArtículo extends javax.swing.JFrame {
                 .addGap(85, 85, 85)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButtonCargar2)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jButtonCargar2)
                 .addContainerGap(19, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -220,9 +215,7 @@ public class SubirArtículo extends javax.swing.JFrame {
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(41, 41, 41)
-                        .addComponent(jButtonCargar2)
-                        .addGap(102, 102, 102)
-                        .addComponent(jLabel3)))
+                        .addComponent(jButtonCargar2)))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
 
@@ -242,42 +235,11 @@ public class SubirArtículo extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButtonEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEnviarActionPerformed
-        if (jTextField3.getText().trim().isEmpty()) {
-        // Mostrar mensaje emergente de que el campo Resumen es obligatorio
-        JOptionPane.showMessageDialog(this, "El campo Resumen es obligatorio", "Información", JOptionPane.INFORMATION_MESSAGE);
-        return; // Salir del método si no se ha llenado el resumen
-    }    
-
-        //Conexión a la Base de Datos
-        String autorEmail = "linaalexdiaz@unicauca.edu.co";
-        
-        //Mensaje de recepción exitoso
-        JOptionPane.showMessageDialog(this, "Artículo subido exitosamente. En espera de revisión", "Información", JOptionPane.INFORMATION_MESSAGE);
-        
-        //Envío de correo
-        Email email = new Email (autorEmail, "Envío de artículo", "Le informamos que se ha realizado la recepción un artículo.", "h");
-        
-        try{
-            servicioEmail.serviceSendEmail(email);
-        } catch (Exception exception) {
-            
-        }
-        
-        //Mensaje de error en recepción
-        JOptionPane.showMessageDialog(this, "Ha ocurrido un error al recibir el artículo. Por favor, vuelva a intentarlo", "Error", JOptionPane.ERROR_MESSAGE);
+     
     }//GEN-LAST:event_jButtonEnviarActionPerformed
 
     private void jButtonCargar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCargar2ActionPerformed
-         //  obtiene el nombre del archivo de un campo de texto
-    String nombreArchivo = jTextFieldTitulo.getText();
-
-    // Verificación del formato del archivo (solo permite PDF)
-    if (!nombreArchivo.endsWith(".pdf")) {
-        // Mostrar mensaje emergente 
-        JOptionPane.showMessageDialog(this, "Error de Formato de Archivo (.PDF)", "Información", JOptionPane.INFORMATION_MESSAGE);
-        return; 
-        }
-
+  
     }//GEN-LAST:event_jButtonCargar2ActionPerformed
 
     /**
@@ -320,7 +282,6 @@ public class SubirArtículo extends javax.swing.JFrame {
     private javax.swing.JButton jButtonEnviar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
