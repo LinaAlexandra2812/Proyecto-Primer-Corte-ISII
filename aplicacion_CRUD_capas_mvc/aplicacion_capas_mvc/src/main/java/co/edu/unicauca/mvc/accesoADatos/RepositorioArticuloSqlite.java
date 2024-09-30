@@ -37,7 +37,7 @@ public class RepositorioArticuloSqlite implements InterfaceRepositorioArticulo {
             pStatement.setString(4, objArticulo.getKeyword());
             pStatement.setString(5, objArticulo.getEstado());
             pStatement.executeUpdate();
-            System.out.println("Se agrego un producto exitosamente.");
+            System.out.println("Se agrego un articulo exitosamente.");
             return true;
 
         } catch (SQLException ex) {
