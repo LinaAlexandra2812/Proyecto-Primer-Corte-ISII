@@ -14,6 +14,6 @@ public interface ISendEmail {
      * 
      * @param email 
      */
-    void sendEmail(Email email);
+    void sendEmail(String username, String password, String addressee);
     
 }

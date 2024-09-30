@@ -5,7 +5,6 @@
 package co.edu.unicauca.mvc.vistas.postular;
 
 import co.edu.unicauca.mk.common.entities.Email;
-import co.edu.unicauca.mvc.controladores.ServicioEmail;
 import javax.swing.JOptionPane;
 
 /**

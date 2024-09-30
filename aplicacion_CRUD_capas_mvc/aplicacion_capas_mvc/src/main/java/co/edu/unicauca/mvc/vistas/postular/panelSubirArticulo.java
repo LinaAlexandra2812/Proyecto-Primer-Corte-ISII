@@ -1,9 +1,10 @@
 package co.edu.unicauca.mvc.vistas.postular;
 
 import co.edu.unicauca.mk.common.entities.Email;
+import co.edu.unicauca.mk.common.interfaces.ISendEmail;
 import co.edu.unicauca.mvc.controladores.ServicioAlmacenamientoArticulos;
-import co.edu.unicauca.mvc.controladores.ServicioEmail;
 import co.edu.unicauca.mvc.modelos.Articulo;
+import co.edu.unicauca.mvc.plugins.EmailSenderPluginManager;
 import javax.swing.JOptionPane;
 
 /**
@@ -11,7 +12,7 @@ import javax.swing.JOptionPane;
  * @author earea
  */
 public class panelSubirArticulo extends javax.swing.JPanel {
-    ServicioEmail servicioEmail = new ServicioEmail();
+    
     private ServicioAlmacenamientoArticulos objServicioArticulos ; 
 
    
@@ -192,6 +193,25 @@ public class panelSubirArticulo extends javax.swing.JPanel {
         
         if (bandera == true){
              JOptionPane.showMessageDialog(this, "Artículo subido exitosamente. En espera de revisión", "Información", JOptionPane.INFORMATION_MESSAGE);
+        
+               try {
+            // Inicializar el EmailSenderPluginManager
+            String basePath = "src/main/resources/plugins/";// Especifica la ruta donde está tu archivo plugin.properties
+            EmailSenderPluginManager.init(basePath);
+
+            // Obtener el plugin para Hotmail (o el servicio de correo que estés usando)
+            ISendEmail emailPlugin = EmailSenderPluginManager.getInstance().getEmailPlugin("h");
+
+            if (emailPlugin != null) {
+                emailPlugin.sendEmail("thaliaepe@hotmail.com", "carolt12345","proyectosoftwareii@hotmail.com");
+            } else {
+                System.out.println("No se encontró el plugin para el servicio de correo especificado.");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        
         }
         else {
            JOptionPane.showMessageDialog(this, "Ha ocurrido un error al recibir el artículo. Por favor, vuelva a intentarlo", "Error", JOptionPane.ERROR_MESSAGE);
@@ -212,11 +232,7 @@ public class panelSubirArticulo extends javax.swing.JPanel {
         //Envío de correo
         Email email = new Email (autorEmail, "Envío de artículo", "Le informamos que se ha realizado la recepción un artículo.", "h");
         
-        try{
-            servicioEmail.serviceSendEmail(email);
-        } catch (Exception exception) {
-            
-        }
+        
         
         //Mensaje de error en recepción
         JOptionPane.showMessageDialog(this, "Ha ocurrido un error al recibir el artículo. Por favor, vuelva a intentarlo", "Error", JOptionPane.ERROR_MESSAGE);
