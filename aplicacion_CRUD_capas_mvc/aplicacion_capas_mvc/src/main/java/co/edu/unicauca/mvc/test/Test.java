@@ -2,6 +2,7 @@ package co.edu.unicauca.mvc.test;
 
 import co.edu.unicauca.mvc.accesoADatos.Factory;
 import co.edu.unicauca.mvc.accesoADatos.InterfaceRepositorioArticulo;
+import co.edu.unicauca.mvc.accesoADatos.InterfaceRepositorioConferencia;
 import co.edu.unicauca.mvc.accesoADatos.RepositorioArticuloMemoriaArrayList;
 import co.edu.unicauca.mvc.accesoADatos.RepositorioArticuloSqlite;
 import co.edu.unicauca.mvc.accesoADatos.RepositorioConferenciaMemoriaArrayList;
@@ -22,12 +23,10 @@ public class Test {
         
         seleccionarLookAndField();
         
-       
-        
         //Para que fábrica nos de el repositorio por defecto
         InterfaceRepositorioArticulo repositorioArticulo = Factory.getInstance().getRepository("default");
-        
         ServicioAlmacenamientoArticulos objServicioArticulos = new ServicioAlmacenamientoArticulos(repositorioArticulo);
+        
         GUIOpciones gui = new GUIOpciones(objServicioArticulos);
         gui.setVisible(true);
         

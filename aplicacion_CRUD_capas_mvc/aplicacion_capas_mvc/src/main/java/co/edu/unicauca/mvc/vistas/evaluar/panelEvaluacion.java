@@ -1,5 +1,6 @@
 package co.edu.unicauca.mvc.vistas.evaluar;
 
+import co.edu.unicauca.mvc.controladores.ServicioAlmacenamientoArticulos;
 import co.edu.unicauca.mvc.utilidades.Utilidades;
 import co.edu.unicauca.mvc.vistas.GUIOpciones;
 
@@ -9,8 +10,10 @@ import co.edu.unicauca.mvc.vistas.GUIOpciones;
  */
 public class panelEvaluacion extends javax.swing.JPanel {
 
+    private ServicioAlmacenamientoArticulos objServicioArticulos;
     /**
      * Creates new form panelEvaluacion
+     * @param nombreConferencia
      */
     public panelEvaluacion(String nombreConferencia) {
         initComponents();
@@ -275,7 +278,7 @@ public class panelEvaluacion extends javax.swing.JPanel {
             
             // Volver a la ventana principal (GUIOpciones)
             GUIOpciones gui = (GUIOpciones) getTopLevelAncestor(); // Obtener la ventana principal
-            gui.mostrarPanel(new panelConferenciasAsignadas()); // Regresar al panel inicial o cualquier otro que elijas
+            gui.mostrarPanel(new panelArticulosAsignados(objServicioArticulos)); // Regresar al panel inicial o cualquier otro que elijas
         }
     }//GEN-LAST:event_btnEnviarActionPerformed
 

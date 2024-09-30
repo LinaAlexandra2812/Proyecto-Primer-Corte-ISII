@@ -7,12 +7,12 @@ import co.edu.unicauca.mvc.vistas.GUIOpciones;
  *
  * @author earea
  */
-public class panelConferenciaEspecifica extends javax.swing.JPanel {
+public class panelArticuloEspecifico extends javax.swing.JPanel {
 
     /**
      * Creates new form panelConferenciaEspecifica
      */
-    public panelConferenciaEspecifica(String nombreConferencia) {
+    public panelArticuloEspecifico(String nombreConferencia) {
         initComponents();
         txtNomConfe.setText(nombreConferencia);
     }

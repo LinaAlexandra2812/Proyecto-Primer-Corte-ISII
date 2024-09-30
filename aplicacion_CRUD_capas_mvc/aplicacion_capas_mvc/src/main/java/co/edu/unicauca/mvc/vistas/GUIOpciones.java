@@ -1,7 +1,8 @@
 package co.edu.unicauca.mvc.vistas;
 
 import co.edu.unicauca.mvc.controladores.ServicioAlmacenamientoArticulos;
-import co.edu.unicauca.mvc.vistas.evaluar.panelConferenciasAsignadas;
+import co.edu.unicauca.mvc.controladores.ServicioAlmacenamientoConferencias;
+import co.edu.unicauca.mvc.vistas.evaluar.panelArticulosAsignados;
 import co.edu.unicauca.mvc.vistas.postular.panelSubirArticulo;
 import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatMaterialLighterIJTheme;
 import java.awt.BorderLayout;
@@ -272,7 +273,7 @@ public class GUIOpciones extends javax.swing.JFrame {
 
     private void btnEvaluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEvaluarActionPerformed
         // TODO add your handling code here:
-        mostrarPanel(new panelConferenciasAsignadas());
+        mostrarPanel(new panelArticulosAsignados(objServicioArticulos));
     }//GEN-LAST:event_btnEvaluarActionPerformed
 
     /**

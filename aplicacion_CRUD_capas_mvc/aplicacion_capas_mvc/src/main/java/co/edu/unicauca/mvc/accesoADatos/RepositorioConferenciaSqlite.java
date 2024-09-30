@@ -101,10 +101,13 @@ public class RepositorioConferenciaSqlite implements InterfaceRepositorioConfere
                 + "     fecha TEXT\n" //+ " cedula_organizador INTEGER REFERENCES Organizador (area_especializada)\n"
                 + ");";
 
+        String insert = "INSERT INTO Conferencia (id, nombre, lugar, tema, descripcion, contacto, fecha) VALUES (1, 'Conferencia de IA', 'Bogotá', 'Inteligencia Artificial', 'Conferencia sobre IA y ML', 301, '2024-09-25');";
+        
         try {
             this.connect();
             Statement statement = connection.createStatement();
             statement.execute(sql);
+            statement.execute(insert);
         } catch (SQLException ex) {
             Logger.getLogger(ServicioAlmacenamientoConferencias.class.getName()).log(Level.SEVERE, null, ex);
         }
