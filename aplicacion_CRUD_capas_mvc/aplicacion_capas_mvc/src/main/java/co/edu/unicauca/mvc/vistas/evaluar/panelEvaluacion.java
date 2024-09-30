@@ -1,6 +1,7 @@
 package co.edu.unicauca.mvc.vistas.evaluar;
 
 import co.edu.unicauca.mvc.utilidades.Utilidades;
+import co.edu.unicauca.mvc.vistas.GUIOpciones;
 
 /**
  *
@@ -271,6 +272,10 @@ public class panelEvaluacion extends javax.swing.JPanel {
         } else {
             // Si todas las opciones fueron seleccionadas, muestra mensaje de éxito
             Utilidades.mensajeInformacion("Se ha evaluado exitosamente", "Información");
+            
+            // Volver a la ventana principal (GUIOpciones)
+            GUIOpciones gui = (GUIOpciones) getTopLevelAncestor(); // Obtener la ventana principal
+            gui.mostrarPanel(new panelConferenciasAsignadas()); // Regresar al panel inicial o cualquier otro que elijas
         }
     }//GEN-LAST:event_btnEnviarActionPerformed
 

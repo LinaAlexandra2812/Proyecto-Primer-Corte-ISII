@@ -1,5 +1,7 @@
 package co.edu.unicauca.mvc.vistas.evaluar;
 
+import co.edu.unicauca.mvc.accesoADatos.RepositorioConferenciaSqlite;
+import co.edu.unicauca.mvc.modelos.Conferencia;
 import co.edu.unicauca.mvc.vistas.GUIOpciones;
 import co.edu.unicauca.mvc.vistas.evaluar.panelConferenciaEspecifica;
 import java.awt.Color;
@@ -20,18 +22,19 @@ import javax.swing.JButton;
  */
 public class panelConferenciasAsignadas extends javax.swing.JPanel {
 
+    private RepositorioConferenciaSqlite repositorio;
     /**
      * Creates new form Principal
      */
     public panelConferenciasAsignadas() {
         initComponents();
+        repositorio = new RepositorioConferenciaSqlite(); // Iniciar el repositorio
         mostrarConferencias();
     }
-    
+
     // Obtención de conferencias y agrega los botones dinámicamente
     private void mostrarConferencias() {
-        // Esto después debe venir de la base de datos
-        List<String> conferencias = List.of("Conferencia A", "Conferencia B", "Conferencia C");
+        List<Conferencia> conferencias = repositorio.listarConferencias();
 
         jPanel2.setLayout(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
@@ -40,9 +43,8 @@ public class panelConferenciasAsignadas extends javax.swing.JPanel {
         gbc.insets = new Insets(10, 0, 10, 0);  // Espacio entre los botones
         gbc.anchor = GridBagConstraints.CENTER; // Centramos los botones
 
-       
-        for (String conferencia : conferencias) {
-            JButton btnConferencia = new JButton(conferencia);
+        for (Conferencia conferencia : conferencias) {
+            JButton btnConferencia = new JButton(conferencia.getNombre());
             espacioConfes.add(btnConferencia); 
             
             // Establecemos el tamaño y el estilo de los botones
@@ -64,7 +66,7 @@ public class panelConferenciasAsignadas extends javax.swing.JPanel {
                 }
             });
 
-           // Añadimos el botón al panel
+            // Añadimos el botón al panel
             jPanel2.add(btnConferencia, gbc);
 
             // Añadimos acción para redirigir al panel de detalles específicos
@@ -80,12 +82,14 @@ public class panelConferenciasAsignadas extends javax.swing.JPanel {
         jPanel2.revalidate();
         jPanel2.repaint();
     }
+
+    
     // Método que redirige al panel de detalles específicos de una conferencia
-    private void mostrarPanelConferenciaEspecifica(String conferencia) {
+    private void mostrarPanelConferenciaEspecifica(Conferencia conferencia) {
         // Aquí debes usar el método que cambia de panel en tu GUI principal
         // Por ejemplo, si estás en el contexto de GUIOpciones, puedes hacer:
         GUIOpciones gui = (GUIOpciones) getTopLevelAncestor(); // Obtenemos la referencia de la ventana principal
-        gui.mostrarPanel(new panelConferenciaEspecifica(conferencia)); // Mostramos el panel con los detalles
+        gui.mostrarPanel(new panelConferenciaEspecifica(conferencia.getNombre())); // Mostramos el panel con los detalles
     }
 
     /**
