@@ -11,7 +11,8 @@ public class Funciones {
     
     public static boolean verificarCampo(String campo) {
         if (campo.trim().isEmpty()) {
-            JOptionPane.showMessageDialog(null, campo + " no puede estar vacío", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "No pueden haber campos vacíos", "Error", JOptionPane.ERROR_MESSAGE);
+            System.out.println(campo);
             return false; // Campo vacío
         }
         return true; // Campo válido
