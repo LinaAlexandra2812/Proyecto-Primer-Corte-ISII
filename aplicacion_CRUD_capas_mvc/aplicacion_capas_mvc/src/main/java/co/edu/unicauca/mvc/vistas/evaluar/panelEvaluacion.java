@@ -267,10 +267,10 @@ public class panelEvaluacion extends javax.swing.JPanel {
             selResultados.getSelectedItem().equals("Seleccione una opción")) {
 
             // Muestra mensaje de error si falta alguna selección
-            Utilidades.mensajeError("Es obligatorio asignar una puntuación", "Error");
+            Utilidades.mensajeAdvertencia("Es obligatorio asignar una puntuación", "Error");
         } else {
             // Si todas las opciones fueron seleccionadas, muestra mensaje de éxito
-            Utilidades.mensajeExito("Se ha evaluado exitosamente", "Información");
+            Utilidades.mensajeInformacion("Se ha evaluado exitosamente", "Información");
         }
     }//GEN-LAST:event_btnEnviarActionPerformed
 
