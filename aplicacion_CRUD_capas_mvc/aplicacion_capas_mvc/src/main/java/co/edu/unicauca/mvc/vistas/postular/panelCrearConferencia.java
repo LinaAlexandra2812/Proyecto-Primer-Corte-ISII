@@ -1,5 +1,11 @@
 package co.edu.unicauca.mvc.vistas.postular;
 
+import co.edu.unicauca.mvc.utilidades.Funciones;
+import static co.edu.unicauca.mvc.utilidades.Funciones.verificarCampo;
+import java.util.Objects;
+import java.util.stream.Stream;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author earea
@@ -76,6 +82,11 @@ public class panelCrearConferencia extends javax.swing.JPanel {
         jButton1.setFont(new java.awt.Font("Nirmala UI Semilight", 0, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("Registrar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -181,6 +192,25 @@ public class panelCrearConferencia extends javax.swing.JPanel {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String nombre = jTextField2.getText();
+        String fechaInicio = jTextField3.getText();
+        String fechaFin = jTextField4.getText();
+        String tema = jTextField5.getText();
+        String descripcion = jTextField6.getText();
+        String ponentes = jTextField7.getText();
+        
+        if(!verificarCampo(nombre) || !verificarCampo(fechaInicio) || !verificarCampo(fechaFin) || !verificarCampo(tema)
+                 || !verificarCampo(descripcion) || !verificarCampo(ponentes)){
+            return;
+        }
+        
+        if(Stream.of(nombre, fechaInicio, fechaFin, tema, descripcion, ponentes).allMatch(Objects::nonNull)){
+            //logica para guardar en la base de datos
+            JOptionPane.showMessageDialog(this, "La conferencia ha sido editada exitosamente", "Información", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
