@@ -13,8 +13,6 @@ public class panelEvaluacion extends javax.swing.JPanel {
         initComponents();
         txtNomConfeE.setText(nombreConferencia);
     }
-    
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -28,36 +26,21 @@ public class panelEvaluacion extends javax.swing.JPanel {
         txtCriterios = new javax.swing.JLabel();
         txtNiveles = new javax.swing.JLabel();
         txtNomConfeE = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        txtResumen = new javax.swing.JLabel();
-        selHipotesis = new javax.swing.JComboBox<>();
         jPanel5 = new javax.swing.JPanel();
         txtResumen3 = new javax.swing.JLabel();
-        selObjetivoG = new javax.swing.JComboBox<>();
-        jPanel6 = new javax.swing.JPanel();
-        txtResumen4 = new javax.swing.JLabel();
-        selObjetivosE = new javax.swing.JComboBox<>();
+        selObjetivo = new javax.swing.JComboBox<>();
         jPanel7 = new javax.swing.JPanel();
         txtResumen5 = new javax.swing.JLabel();
         selResultados = new javax.swing.JComboBox<>();
-        jPanel8 = new javax.swing.JPanel();
-        txtResumen6 = new javax.swing.JLabel();
-        selDiscusion = new javax.swing.JComboBox<>();
-        jPanel9 = new javax.swing.JPanel();
-        txtResumen7 = new javax.swing.JLabel();
-        selConclusiones = new javax.swing.JComboBox<>();
         jPanel10 = new javax.swing.JPanel();
         txtResumen8 = new javax.swing.JLabel();
-        selIntro = new javax.swing.JComboBox<>();
+        selPalabras = new javax.swing.JComboBox<>();
         jPanel11 = new javax.swing.JPanel();
         txtResumen9 = new javax.swing.JLabel();
-        selResumen9 = new javax.swing.JComboBox<>();
-        jPanel12 = new javax.swing.JPanel();
-        txtResumen10 = new javax.swing.JLabel();
-        selBibliografia = new javax.swing.JComboBox<>();
+        selResumen = new javax.swing.JComboBox<>();
         jPanel13 = new javax.swing.JPanel();
         txtResumen11 = new javax.swing.JLabel();
-        selAspectos = new javax.swing.JComboBox<>();
+        selDescripcion = new javax.swing.JComboBox<>();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtObservaciones = new javax.swing.JTextArea();
         btnEnviar = new javax.swing.JButton();
@@ -73,41 +56,12 @@ public class panelEvaluacion extends javax.swing.JPanel {
 
         txtNomConfeE.setText("Titulo Trabajo");
 
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-
-        txtResumen.setText("Hipótesis");
-
-        selHipotesis.setBackground(new java.awt.Color(255, 255, 255));
-        selHipotesis.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "0 (Deficiente)", "1 (Insuficiente)", "2 (Sufuciente)", "3 (Bueno)", "4 (Excente)" }));
-        selHipotesis.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                selHipotesisActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(txtResumen, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(selHipotesis, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(txtResumen)
-            .addComponent(selHipotesis, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
 
         txtResumen3.setText("Objetivo general");
 
-        selObjetivoG.setBackground(new java.awt.Color(255, 255, 255));
-        selObjetivoG.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "0 (Deficiente)", "1 (Insuficiente)", "2 (Sufuciente)", "3 (Bueno)", "4 (Excente)" }));
+        selObjetivo.setBackground(new java.awt.Color(255, 255, 255));
+        selObjetivo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "0 (Deficiente)", "1 (Insuficiente)", "2 (Sufuciente)", "3 (Bueno)", "4 (Excente)" }));
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -117,37 +71,13 @@ public class panelEvaluacion extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(txtResumen3, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(selObjetivoG, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(selObjetivo, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(txtResumen3)
-            .addComponent(selObjetivoG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-
-        jPanel6.setBackground(new java.awt.Color(255, 255, 255));
-
-        txtResumen4.setText("Objetivos específicos");
-
-        selObjetivosE.setBackground(new java.awt.Color(255, 255, 255));
-        selObjetivosE.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "0 (Deficiente)", "1 (Insuficiente)", "2 (Sufuciente)", "3 (Bueno)", "4 (Excente)" }));
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(txtResumen4, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(selObjetivosE, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(txtResumen4)
-            .addComponent(selObjetivosE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(selObjetivo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
@@ -174,60 +104,12 @@ public class panelEvaluacion extends javax.swing.JPanel {
             .addComponent(selResultados, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
-        jPanel8.setBackground(new java.awt.Color(255, 255, 255));
-
-        txtResumen6.setText("Discusión");
-
-        selDiscusion.setBackground(new java.awt.Color(255, 255, 255));
-        selDiscusion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "0 (Deficiente)", "1 (Insuficiente)", "2 (Sufuciente)", "3 (Bueno)", "4 (Excente)" }));
-
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(txtResumen6, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(selDiscusion, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(txtResumen6)
-            .addComponent(selDiscusion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-
-        jPanel9.setBackground(new java.awt.Color(255, 255, 255));
-
-        txtResumen7.setText("Conclusiones");
-
-        selConclusiones.setBackground(new java.awt.Color(255, 255, 255));
-        selConclusiones.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "0 (Deficiente)", "1 (Insuficiente)", "2 (Sufuciente)", "3 (Bueno)", "4 (Excente)" }));
-
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(txtResumen7, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(selConclusiones, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(txtResumen7)
-            .addComponent(selConclusiones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-
         jPanel10.setBackground(new java.awt.Color(255, 255, 255));
 
-        txtResumen8.setText("Introducción");
+        txtResumen8.setText("Palabras clave");
 
-        selIntro.setBackground(new java.awt.Color(255, 255, 255));
-        selIntro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "0 (Deficiente)", "1 (Insuficiente)", "2 (Sufuciente)", "3 (Bueno)", "4 (Excente)" }));
+        selPalabras.setBackground(new java.awt.Color(255, 255, 255));
+        selPalabras.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "0 (Deficiente)", "1 (Insuficiente)", "2 (Sufuciente)", "3 (Bueno)", "4 (Excente)" }));
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -237,21 +119,21 @@ public class panelEvaluacion extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(txtResumen8, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(selIntro, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(selPalabras, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(txtResumen8)
-            .addComponent(selIntro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(selPalabras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         jPanel11.setBackground(new java.awt.Color(255, 255, 255));
 
-        txtResumen9.setText("Resumen y palabras clave");
+        txtResumen9.setText("Resumen");
 
-        selResumen9.setBackground(new java.awt.Color(255, 255, 255));
-        selResumen9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "0 (Deficiente)", "1 (Insuficiente)", "2 (Sufuciente)", "3 (Bueno)", "4 (Excente)" }));
+        selResumen.setBackground(new java.awt.Color(255, 255, 255));
+        selResumen.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "0 (Deficiente)", "1 (Insuficiente)", "2 (Sufuciente)", "3 (Bueno)", "4 (Excente)" }));
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -261,45 +143,21 @@ public class panelEvaluacion extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(txtResumen9, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(selResumen9, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(selResumen, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(txtResumen9)
-            .addComponent(selResumen9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-
-        jPanel12.setBackground(new java.awt.Color(255, 255, 255));
-
-        txtResumen10.setText("Bibliografía");
-
-        selBibliografia.setBackground(new java.awt.Color(255, 255, 255));
-        selBibliografia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "0 (Deficiente)", "1 (Insuficiente)", "2 (Sufuciente)", "3 (Bueno)", "4 (Excente)" }));
-
-        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
-        jPanel12.setLayout(jPanel12Layout);
-        jPanel12Layout.setHorizontalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(txtResumen10, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(selBibliografia, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-        jPanel12Layout.setVerticalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(txtResumen10)
-            .addComponent(selBibliografia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(selResumen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         jPanel13.setBackground(new java.awt.Color(255, 255, 255));
 
-        txtResumen11.setText("Aspectos formales y de lenguaje");
+        txtResumen11.setText("Descripción");
 
-        selAspectos.setBackground(new java.awt.Color(255, 255, 255));
-        selAspectos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "0 (Deficiente)", "1 (Insuficiente)", "2 (Sufuciente)", "3 (Bueno)", "4 (Excente)" }));
+        selDescripcion.setBackground(new java.awt.Color(255, 255, 255));
+        selDescripcion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione una opción", "0 (Deficiente)", "1 (Insuficiente)", "2 (Sufuciente)", "3 (Bueno)", "4 (Excente)" }));
 
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
@@ -309,13 +167,13 @@ public class panelEvaluacion extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(txtResumen11, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(selAspectos, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(selDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(txtResumen11)
-            .addComponent(selAspectos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(selDescripcion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         txtObservaciones.setBackground(new java.awt.Color(255, 255, 255));
@@ -326,40 +184,38 @@ public class panelEvaluacion extends javax.swing.JPanel {
 
         btnEnviar.setBackground(new java.awt.Color(235, 236, 236));
         btnEnviar.setText("Enviar");
+        btnEnviar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEnviarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(260, 260, 260)
-                .addComponent(txtNomConfeE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(290, 290, 290))
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(93, 93, 93)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(93, 93, 93)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(txtCriterios)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txtNiveles))
-                            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(313, 313, 313)
-                        .addComponent(btnEnviar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(241, 241, 241)))
+                    .addComponent(jPanel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(txtCriterios)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtNiveles))
+                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(21, 21, 21))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(297, 297, 297)
+                .addComponent(txtNomConfeE, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE)
+                .addGap(242, 242, 242))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(314, 314, 314)
+                .addComponent(btnEnviar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(247, 247, 247))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -375,26 +231,16 @@ public class panelEvaluacion extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnEnviar)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(143, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -411,9 +257,9 @@ public class panelEvaluacion extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void selHipotesisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selHipotesisActionPerformed
+    private void btnEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_selHipotesisActionPerformed
+    }//GEN-LAST:event_btnEnviarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -421,37 +267,22 @@ public class panelEvaluacion extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JComboBox<String> selAspectos;
-    private javax.swing.JComboBox<String> selBibliografia;
-    private javax.swing.JComboBox<String> selConclusiones;
-    private javax.swing.JComboBox<String> selDiscusion;
-    private javax.swing.JComboBox<String> selHipotesis;
-    private javax.swing.JComboBox<String> selIntro;
-    private javax.swing.JComboBox<String> selObjetivoG;
-    private javax.swing.JComboBox<String> selObjetivosE;
+    private javax.swing.JComboBox<String> selDescripcion;
+    private javax.swing.JComboBox<String> selObjetivo;
+    private javax.swing.JComboBox<String> selPalabras;
     private javax.swing.JComboBox<String> selResultados;
-    private javax.swing.JComboBox<String> selResumen9;
+    private javax.swing.JComboBox<String> selResumen;
     private javax.swing.JLabel txtCriterios;
     private javax.swing.JLabel txtNiveles;
     private javax.swing.JLabel txtNomConfeE;
     private javax.swing.JTextArea txtObservaciones;
-    private javax.swing.JLabel txtResumen;
-    private javax.swing.JLabel txtResumen10;
     private javax.swing.JLabel txtResumen11;
     private javax.swing.JLabel txtResumen3;
-    private javax.swing.JLabel txtResumen4;
     private javax.swing.JLabel txtResumen5;
-    private javax.swing.JLabel txtResumen6;
-    private javax.swing.JLabel txtResumen7;
     private javax.swing.JLabel txtResumen8;
     private javax.swing.JLabel txtResumen9;
     // End of variables declaration//GEN-END:variables

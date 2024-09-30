@@ -30,20 +30,12 @@ public class panelConferenciaEspecifica extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         txtNomConfe = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        esperaUrl = new javax.swing.JLabel();
-        esperaNivelEdu = new javax.swing.JLabel();
-        esperaAutor = new javax.swing.JLabel();
-        esperaFecha = new javax.swing.JLabel();
-        esperaArticulo = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        esperaDescripcion = new javax.swing.JLabel();
+        esperaKeywords = new javax.swing.JLabel();
         esperaResumen = new javax.swing.JLabel();
-        esperaAreaConoc = new javax.swing.JLabel();
         btnEvaluarConfe = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(236, 236, 235));
@@ -54,79 +46,47 @@ public class panelConferenciaEspecifica extends javax.swing.JPanel {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel1.setText("URL:");
-
-        jLabel2.setText("Nivel Educativo::");
-
-        jLabel3.setText("Área de Conocimiento:");
-
-        jLabel4.setText("Autor:");
-
-        jLabel5.setText("Fecha:");
-
-        jLabel6.setText("Publicado en:");
-
         jLabel7.setText("Resumen:");
+
+        jLabel8.setText("Descripción:");
+
+        jLabel9.setText("Keywords:");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(37, 37, 37)
+                .addGap(57, 57, 57)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2)
-                    .addComponent(esperaNivelEdu)
-                    .addComponent(jLabel3)
-                    .addComponent(esperaUrl)
-                    .addComponent(esperaAreaConoc))
-                .addGap(217, 217, 217)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(esperaResumen)
-                    .addComponent(esperaArticulo)
-                    .addComponent(esperaAutor)
                     .addComponent(jLabel7)
-                    .addComponent(jLabel4)
-                    .addComponent(esperaFecha)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel8)
+                            .addComponent(esperaDescripcion))
+                        .addGap(249, 249, 249)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(esperaKeywords)
+                            .addComponent(jLabel9)))
+                    .addComponent(esperaResumen, javax.swing.GroupLayout.PREFERRED_SIZE, 548, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
+                .addGap(26, 26, 26)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel4))
-                .addGap(3, 3, 3)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(esperaUrl)
-                    .addComponent(esperaAutor))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel8))
+                .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(esperaNivelEdu)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(esperaAreaConoc))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(esperaFecha)
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(esperaArticulo)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(esperaDescripcion)
+                    .addComponent(esperaKeywords))
+                .addGap(10, 10, 10)
                 .addComponent(jLabel7)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(esperaResumen)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(esperaResumen, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         btnEvaluarConfe.setBackground(new java.awt.Color(236, 236, 236));
@@ -187,20 +147,12 @@ public class panelConferenciaEspecifica extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEvaluarConfe;
-    private javax.swing.JLabel esperaAreaConoc;
-    private javax.swing.JLabel esperaArticulo;
-    private javax.swing.JLabel esperaAutor;
-    private javax.swing.JLabel esperaFecha;
-    private javax.swing.JLabel esperaNivelEdu;
+    private javax.swing.JLabel esperaDescripcion;
+    private javax.swing.JLabel esperaKeywords;
     private javax.swing.JLabel esperaResumen;
-    private javax.swing.JLabel esperaUrl;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel txtNomConfe;
