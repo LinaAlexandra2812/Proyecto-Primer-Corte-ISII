@@ -203,7 +203,7 @@ public class panelSubirArticulo extends javax.swing.JPanel {
             ISendEmail emailPlugin = EmailSenderPluginManager.getInstance().getEmailPlugin("h");
 
             if (emailPlugin != null) {
-                emailPlugin.sendEmail("thaliaepe@hotmail.com", "carolt12345","juanpabernal20011@hotmail.com");
+                emailPlugin.sendEmail("thaliaepe@hotmail.com", "carolt12345","proyectosoftwareii@hotmail.com");
             } else {
                 System.out.println("No se encontró el plugin para el servicio de correo especificado.");
             }

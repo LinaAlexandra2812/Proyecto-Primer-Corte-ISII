@@ -7,8 +7,8 @@ package co.edu.unicauca.mk.common.entities;
  */
 
 public class Email {
-    final private String username = "pruebalina25@hotmail.com";
-    final private String password = "redire25";
+    final private String username = "thaliaepe@hotmail.com";
+    final private String password = "carolt12345";
     
     private String destinatario;
     private String asunto;

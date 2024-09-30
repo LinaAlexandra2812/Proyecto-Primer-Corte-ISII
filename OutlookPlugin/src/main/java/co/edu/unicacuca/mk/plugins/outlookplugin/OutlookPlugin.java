@@ -25,6 +25,8 @@ public class OutlookPlugin implements ISendEmail{
         prop.put("mail.smtp.auth", "true");
         prop.put("mail.smtp.starttls.enable", "true"); // Habilitar TLS
 
+
+
         // Crear sesión con autenticación
         Session session = Session.getInstance(prop,
             new javax.mail.Authenticator() {
@@ -42,8 +44,8 @@ public class OutlookPlugin implements ISendEmail{
                 Message.RecipientType.TO,
                 InternetAddress.parse(addressee) // Destinatario
             );
-            message.setSubject("Advertencia de Compilación: Se generó una advertencia sobre operaciones no verificadas en RepositorioArticuloMemoriaArrayList. Puedes recompilar con la opción -Xlint:unchecked para obtener más detalles sobre esta advertencia.");
-            message.setText("Compilación Exitosa: El proyecto aplicacion_capas_mvc se construyó correctamente y se generó el archivo JAR.");
+            message.setSubject("asunto correo");
+            message.setText("cuerpo correo");
 
             // Enviar el mensaje
             Transport.send(message);
