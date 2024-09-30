@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
  * @author karen
  */
 public class SubirArtículo extends javax.swing.JFrame {
-    ServicioEmail servicioEmail = new ServicioEmail();
+    
 
     /**
      * Creates new form SubirArtículo
@@ -242,42 +242,11 @@ public class SubirArtículo extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField1ActionPerformed
 
     private void jButtonEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonEnviarActionPerformed
-        if (jTextField3.getText().trim().isEmpty()) {
-        // Mostrar mensaje emergente de que el campo Resumen es obligatorio
-        JOptionPane.showMessageDialog(this, "El campo Resumen es obligatorio", "Información", JOptionPane.INFORMATION_MESSAGE);
-        return; // Salir del método si no se ha llenado el resumen
-    }    
-
-        //Conexión a la Base de Datos
-        String autorEmail = "linaalexdiaz@unicauca.edu.co";
-        
-        //Mensaje de recepción exitoso
-        JOptionPane.showMessageDialog(this, "Artículo subido exitosamente. En espera de revisión", "Información", JOptionPane.INFORMATION_MESSAGE);
-        
-        //Envío de correo
-        Email email = new Email (autorEmail, "Envío de artículo", "Le informamos que se ha realizado la recepción un artículo.", "h");
-        
-        try{
-            servicioEmail.serviceSendEmail(email);
-        } catch (Exception exception) {
-            
-        }
-        
-        //Mensaje de error en recepción
-        JOptionPane.showMessageDialog(this, "Ha ocurrido un error al recibir el artículo. Por favor, vuelva a intentarlo", "Error", JOptionPane.ERROR_MESSAGE);
+     
     }//GEN-LAST:event_jButtonEnviarActionPerformed
 
     private void jButtonCargar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCargar2ActionPerformed
-         //  obtiene el nombre del archivo de un campo de texto
-    String nombreArchivo = jTextFieldTitulo.getText();
-
-    // Verificación del formato del archivo (solo permite PDF)
-    if (!nombreArchivo.endsWith(".pdf")) {
-        // Mostrar mensaje emergente 
-        JOptionPane.showMessageDialog(this, "Error de Formato de Archivo (.PDF)", "Información", JOptionPane.INFORMATION_MESSAGE);
-        return; 
-        }
-
+  
     }//GEN-LAST:event_jButtonCargar2ActionPerformed
 
     /**
