@@ -1,5 +1,7 @@
 package co.edu.unicauca.mvc.vistas.evaluar;
 
+import co.edu.unicauca.mvc.utilidades.Utilidades;
+
 /**
  *
  * @author earea
@@ -258,7 +260,18 @@ public class panelEvaluacion extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnEnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEnviarActionPerformed
-        // TODO add your handling code here:
+        if (selResumen.getSelectedItem().equals("Seleccione una opción") ||
+            selPalabras.getSelectedItem().equals("Seleccione una opción") ||
+            selDescripcion.getSelectedItem().equals("Seleccione una opción") ||
+            selObjetivo.getSelectedItem().equals("Seleccione una opción") ||
+            selResultados.getSelectedItem().equals("Seleccione una opción")) {
+
+            // Muestra mensaje de error si falta alguna selección
+            Utilidades.mensajeError("Es obligatorio asignar una puntuación", "Error");
+        } else {
+            // Si todas las opciones fueron seleccionadas, muestra mensaje de éxito
+            Utilidades.mensajeExito("Se ha evaluado exitosamente", "Información");
+        }
     }//GEN-LAST:event_btnEnviarActionPerformed
 
 
