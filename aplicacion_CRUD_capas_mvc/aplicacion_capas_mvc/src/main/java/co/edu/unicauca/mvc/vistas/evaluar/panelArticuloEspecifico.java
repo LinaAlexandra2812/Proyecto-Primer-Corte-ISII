@@ -1,5 +1,7 @@
 package co.edu.unicauca.mvc.vistas.evaluar;
 
+import co.edu.unicauca.mvc.controladores.ServicioAlmacenamientoArticulos;
+import co.edu.unicauca.mvc.modelos.Articulo;
 import co.edu.unicauca.mvc.vistas.evaluar.panelEvaluacion;
 import co.edu.unicauca.mvc.vistas.GUIOpciones;
 
@@ -9,15 +11,39 @@ import co.edu.unicauca.mvc.vistas.GUIOpciones;
  */
 public class panelArticuloEspecifico extends javax.swing.JPanel {
 
+    private ServicioAlmacenamientoArticulos objServicioArticulos;
+    private Articulo articulo; // Variable para almacenar el artículo que se cargará
+
     /**
      * Creates new form panelConferenciaEspecifica
      */
-    public panelArticuloEspecifico(String nombreConferencia) {
+
+    
+    public panelArticuloEspecifico(ServicioAlmacenamientoArticulos objServicioArticulos, int idArticulo) {
         initComponents();
-        txtNomConfe.setText(nombreConferencia);
+        this.objServicioArticulos = objServicioArticulos;
+        this.articulo = objServicioArticulos.consultarArticulo(idArticulo); // Consulta el artículo desde la base de datos
+        cargarDatosArticulo(); // Llama al método para cargar los datos en los labels
     }
 
+    panelArticuloEspecifico(String nombre) {
+         txtNomConfe.setText(nombre); 
+    }
 
+    private void cargarDatosArticulo() {
+        if (articulo != null) {
+            txtNomConfe.setText(articulo.getTitulo());  // Asignamos el título del artículo
+            esperaDescripcion.setText(articulo.getResumen());  // Asignamos la descripción (resumen)
+            esperaKeywords.setText(articulo.getKeyword());  // Asignamos las keywords
+            esperaResumen.setText(articulo.getResumen());  // Asignamos el resumen completo
+        } else {
+            // Si el artículo no existe, mostramos mensajes por defecto
+            txtNomConfe.setText("Artículo no encontrado");
+            esperaDescripcion.setText("Descripción no disponible");
+            esperaKeywords.setText("Keywords no disponibles");
+            esperaResumen.setText("Resumen no disponible");
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -42,14 +68,18 @@ public class panelArticuloEspecifico extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(236, 236, 236));
 
+        txtNomConfe.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         txtNomConfe.setText("Titulo Trabajo");
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
+        jLabel7.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel7.setText("Resumen:");
 
+        jLabel8.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel8.setText("Descripción:");
 
+        jLabel9.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         jLabel9.setText("Keywords:");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -59,17 +89,20 @@ public class panelArticuloEspecifico extends javax.swing.JPanel {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(57, 57, 57)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(491, 491, 491))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel8)
+                            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(esperaDescripcion))
                         .addGap(249, 249, 249)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(esperaKeywords)
-                            .addComponent(jLabel9)))
+                            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(169, 169, 169))
                     .addComponent(esperaResumen, javax.swing.GroupLayout.PREFERRED_SIZE, 548, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(42, 42, 42))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -82,9 +115,9 @@ public class panelArticuloEspecifico extends javax.swing.JPanel {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(esperaDescripcion)
                     .addComponent(esperaKeywords))
-                .addGap(10, 10, 10)
+                .addGap(34, 34, 34)
                 .addComponent(jLabel7)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(esperaResumen, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(18, Short.MAX_VALUE))
         );
@@ -107,12 +140,12 @@ public class panelArticuloEspecifico extends javax.swing.JPanel {
                 .addGap(19, 19, 19))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(307, 307, 307)
-                .addComponent(btnEvaluarConfe, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(352, 352, 352))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(307, 307, 307)
                 .addComponent(txtNomConfe, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(311, 311, 311)
+                .addComponent(btnEvaluarConfe, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(325, 325, 325))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -121,9 +154,9 @@ public class panelArticuloEspecifico extends javax.swing.JPanel {
                 .addComponent(txtNomConfe)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
-                .addComponent(btnEvaluarConfe)
-                .addGap(109, 109, 109))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnEvaluarConfe, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(115, 115, 115))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

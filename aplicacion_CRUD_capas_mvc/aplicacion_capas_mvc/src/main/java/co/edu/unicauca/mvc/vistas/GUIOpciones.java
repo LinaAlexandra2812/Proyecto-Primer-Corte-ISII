@@ -158,24 +158,11 @@ public class GUIOpciones extends javax.swing.JFrame {
 
         baseContenido.setBackground(new java.awt.Color(236, 236, 236));
         baseContenido.setPreferredSize(new java.awt.Dimension(620, 400));
+        baseContenido.setLayout(new java.awt.GridLayout());
 
         contenido.setBackground(new java.awt.Color(236, 236, 236));
         contenido.setLayout(new java.awt.GridLayout(1, 0));
-
-        javax.swing.GroupLayout baseContenidoLayout = new javax.swing.GroupLayout(baseContenido);
-        baseContenido.setLayout(baseContenidoLayout);
-        baseContenidoLayout.setHorizontalGroup(
-            baseContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(baseContenidoLayout.createSequentialGroup()
-                .addComponent(contenido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        baseContenidoLayout.setVerticalGroup(
-            baseContenidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(baseContenidoLayout.createSequentialGroup()
-                .addComponent(contenido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 427, Short.MAX_VALUE))
-        );
+        baseContenido.add(contenido);
 
         javax.swing.GroupLayout backgroundLayout = new javax.swing.GroupLayout(background);
         background.setLayout(backgroundLayout);

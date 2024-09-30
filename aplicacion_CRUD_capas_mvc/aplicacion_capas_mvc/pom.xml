@@ -70,12 +70,19 @@
             <version>1.0</version>
         </dependency>
     </dependencies>
-    <properties>
+<!--    <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>22</maven.compiler.source>
         <maven.compiler.target>22</maven.compiler.target>
         <exec.mainClass>co.edu.unicauca.mvc.Aplicacion_capas_mvc</exec.mainClass>
+    </properties>-->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>21</maven.compiler.source> <!-- Cambiado a 21 -->
+        <maven.compiler.target>21</maven.compiler.target> <!-- Cambiado a 21 -->
+        <exec.mainClass>co.edu.unicauca.mvc.Aplicacion_capas_mvc</exec.mainClass>
     </properties>
+
 <repositories>
     <repository>
         <id>jitpack.io</id>

@@ -1,8 +1,6 @@
 package co.edu.unicauca.mvc.vistas.evaluar;
 
-import co.edu.unicauca.mvc.accesoADatos.RepositorioConferenciaSqlite;
 import co.edu.unicauca.mvc.controladores.ServicioAlmacenamientoArticulos;
-import co.edu.unicauca.mvc.controladores.ServicioAlmacenamientoConferencias;
 import co.edu.unicauca.mvc.modelos.Articulo;
 import co.edu.unicauca.mvc.modelos.Conferencia;
 import co.edu.unicauca.mvc.vistas.GUIOpciones;
@@ -78,7 +76,7 @@ public class panelArticulosAsignados extends javax.swing.JPanel {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                     GUIOpciones gui = (GUIOpciones) getTopLevelAncestor(); // Obtenemos la referencia de la ventana principal
-                    gui.mostrarPanel(new panelArticuloEspecifico(articulo.getTitulo()));
+                    gui.mostrarPanel(new panelArticuloEspecifico(objServicioArticulos, articulo.getIdArticulo()));
                 }
             });
         }
