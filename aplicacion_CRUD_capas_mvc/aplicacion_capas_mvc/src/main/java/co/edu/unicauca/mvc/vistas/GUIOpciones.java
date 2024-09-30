@@ -1,5 +1,6 @@
 package co.edu.unicauca.mvc.vistas;
 
+import co.edu.unicauca.mvc.controladores.ServicioAlmacenamientoArticulos;
 import co.edu.unicauca.mvc.vistas.evaluar.panelConferenciasAsignadas;
 import co.edu.unicauca.mvc.vistas.postular.panelSubirArticulo;
 import com.formdev.flatlaf.intellijthemes.materialthemeuilite.FlatMaterialLighterIJTheme;
@@ -17,12 +18,15 @@ public class GUIOpciones extends javax.swing.JFrame {
     private boolean barraVisible = true; // Inicialmente la barra es visible
     // Declaración de Timer para las animaciones
     private Timer timer;
+    private ServicioAlmacenamientoArticulos objServicioArticulos;
+    
     /**
      * Creates new form GUIOpcioness
      */
-    public GUIOpciones() {
+    public GUIOpciones(ServicioAlmacenamientoArticulos objServicioArticulos) {
         initComponents();
         barraVisible = true;
+        this.objServicioArticulos = objServicioArticulos;
     }
     
 //    private void initStyles(){
@@ -263,7 +267,7 @@ public class GUIOpciones extends javax.swing.JFrame {
     
     private void btnPostular1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPostular1ActionPerformed
 
-        mostrarPanel(new panelSubirArticulo());
+        mostrarPanel(new panelSubirArticulo(objServicioArticulos));
     }//GEN-LAST:event_btnPostular1ActionPerformed
 
     private void btnEvaluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEvaluarActionPerformed

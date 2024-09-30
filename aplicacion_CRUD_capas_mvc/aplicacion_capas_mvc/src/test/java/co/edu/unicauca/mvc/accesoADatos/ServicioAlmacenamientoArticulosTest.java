@@ -21,7 +21,6 @@ public class ServicioAlmacenamientoArticulosTest {
     public void almacenarArticuloTest(){
         Articulo nuevoArticulo = new Articulo();
         nuevoArticulo.setTitulo("Articulo de prueba");
-        nuevoArticulo.setDescripcion("Descripcion de prueba");
         nuevoArticulo.setResumen("Resumen de prueba");
         nuevoArticulo.setKeyword("Palabras, clave, de, prueba");
         nuevoArticulo.setEstado("Aceptado");
@@ -43,13 +42,12 @@ public class ServicioAlmacenamientoArticulosTest {
     public void actualizarArticuloTest(){
         Articulo articulo = new Articulo();
         articulo.setTitulo("Articulo de prueba");
-        articulo.setDescripcion("Descripcion de prueba");
         articulo.setResumen("Resumen de prueba");
         articulo.setKeyword("Palabras, clave, de, prueba");
         articulo.setEstado("Aceptado");
         servicio.almacenarArticulo(articulo);
         
-        articulo.setDescripcion("Descripcion de prueba actualizada");
+
         articulo.setResumen("Resumen de prueba actualizado");
         articulo.setKeyword("Palabras, clave, de, prueba, actualizadas");
         
