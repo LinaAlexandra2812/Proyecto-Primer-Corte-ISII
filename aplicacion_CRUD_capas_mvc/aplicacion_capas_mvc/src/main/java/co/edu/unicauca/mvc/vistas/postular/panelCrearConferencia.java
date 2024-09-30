@@ -203,7 +203,6 @@ public class panelCrearConferencia extends javax.swing.JPanel {
    
         // Validar que los campos no estén vacíos
         if (nombre.isEmpty() || tema.isEmpty() || descripcion.isEmpty() || ponentes.isEmpty() || fechaInicio.isEmpty() || fechaFin.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Por favor, completa todos los campos", "Error", JOptionPane.ERROR_MESSAGE);
             return; // Detener la ejecución si hay campos vacíos
     }
 
