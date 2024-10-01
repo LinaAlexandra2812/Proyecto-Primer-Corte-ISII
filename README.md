@@ -12,5 +12,7 @@ Este repositorio contiene una parte del desarrollo de una aplicación destinada 
 
 ## Enlaces:
 Carpeta Drive - Documentos: https://drive.google.com/drive/folders/142GEDCpdYzyLDxb_kQW_gIyESC0BnCx_?usp=drive_link
+
 Prototipos: https://www.figma.com/design/qIMCXCpxB3ADYrEbtQZ4b8/FemTech?node-id=0-1&t=lJHpOrHlHvxGt30V-1
+
 Enlace video sustentación: https://drive.google.com/file/d/1lSUEnkLllqt94q8jOvadpWs_pJ5Xxu-X/view?usp=drive_link
